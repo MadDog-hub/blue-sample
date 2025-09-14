@@ -1,0 +1,537 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Elegant Wedding Design System */
+
+@layer base {
+  :root {
+    /* Light Mode Blue Pastel Base Colors */
+    --background: 216 63% 85%; /* Updated pastel blue background */
+    --foreground: 220 90% 15%; /* Deep navy blue text */
+
+    /* Card Colors */
+    --card: 216 63% 82%; /* Updated pastel blue cards */
+    --card-foreground: 220 85% 20%; /* Navy blue text on cards */
+
+    /* Popover Colors */
+    --popover: 216 63% 90%; /* Updated pastel blue popover */
+    --popover-foreground: 220 90% 15%; /* Deep navy blue text */
+
+    /* Brand Color */
+    --brand: 221 63% 73%; /* #8baae7 - Main brand color */
+    
+    /* Primary Colors */
+    --primary: 220 80% 45%; /* Hard blue primary */
+    --primary-foreground: 210 100% 98%; /* Light blue on hard blue */
+
+    /* Secondary Colors */
+    --secondary: 216 63% 80%; /* Updated pastel blue secondary */
+    --secondary-foreground: 220 75% 25%; /* Navy blue text */
+
+    /* Muted Colors */
+    --muted: 216 63% 85%; /* Updated pastel blue muted */
+    --muted-foreground: 220 50% 45%; /* Medium blue text */
+
+    /* Accent Colors */
+    --accent: 216 63% 78%; /* Updated pastel blue accent */
+    --accent-foreground: 220 80% 30%; /* Darker blue text */
+
+    /* Gold/Special Accent - using elegant blue */
+    --gold: 225 85% 55%; /* Elegant hard blue */
+    --gold-foreground: 210 100% 98%; /* Light blue text */
+
+    /* Dress Code Palette - adapted for blue light theme */
+    --warm-brown: 215 55% 75%; /* Warm light blue */
+    --medium-brown: 220 60% 70%; /* Medium blue */
+    --dusty-rose: 210 45% 80%; /* Dusty light blue */
+    --rose-brown: 225 50% 75%; /* Rose blue */
+    --muted-pink: 215 40% 85%; /* Muted light blue */
+    --soft-blush: 210 35% 88%; /* Soft blue blush */
+    --brick-red: 230 65% 65%; /* Brick blue */
+    --soft-pink: 205 45% 85%; /* Soft blue pink */
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 100% 98%;
+
+    /* Borders & Inputs */
+    --border: 216 63% 70%; /* Updated pastel blue border */
+    --input: 216 63% 85%; /* Updated pastel blue input */
+    --ring: 220 80% 45%; /* Hard blue ring */
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Light Blue Mode Gradients */
+    --gradient-elegant: linear-gradient(135deg, hsl(210, 100%, 98%), hsl(215, 70%, 85%));
+    --gradient-gold: linear-gradient(135deg, hsl(220, 80%, 45%), hsl(225, 85%, 55%));
+    --gradient-warm: linear-gradient(135deg, hsl(210, 60%, 95%), hsl(220, 60%, 70%));
+
+    /* Light Blue Mode Shadows */
+    --shadow-elegant: 0 20px 50px -10px rgba(34, 80, 149, 0.15);
+    --shadow-soft: 0 10px 30px -5px rgba(34, 80, 149, 0.1);
+    --shadow-warm: 0 15px 40px -8px rgba(34, 80, 149, 0.08);
+
+    /* Elegant Typography Scale */
+    --font-display: 'Boska', 'Cormorant Garamond', serif; /* Headers - Boska 700 */
+    --font-script: 'Boska', 'Cormorant Garamond', serif; /* Sub-headers - Boska 500 */
+    --font-times: 'Times New Roman', Times, serif;
+    --font-body: 'Satoshi', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif; /* Body text */
+
+    /* Smooth Transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 216 63% 90%;
+    --sidebar-foreground: 220 90% 15%;
+    --sidebar-primary: 220 80% 45%;
+    --sidebar-primary-foreground: 210 100% 98%;
+    --sidebar-accent: 216 63% 78%;
+    --sidebar-accent-foreground: 220 80% 30%;
+    --sidebar-border: 216 63% 75%;
+    --sidebar-ring: 220 80% 45%;
+  }
+
+  /* Custom Wedding Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes underlineGold {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes parallaxFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Responsive clip-path variables for story images */
+@media (min-width: 768px) {
+  :root {
+    --clip-path-1: url(#clipPath-1);
+    --clip-path-2: url(#clipPath-2);
+    --clip-path-3: url(#clipPath-3);
+    --clip-path-4: url(#clipPath-4);
+    --clip-path-5: url(#clipPath-5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    outline: none !important;
+  }
+
+  html {
+    @apply bg-background;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+
+
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+    font-weight: 500;
+  }
+
+  .font-times {
+    font-family: var(--font-times);
+  }
+
+  /* Mobile-First Responsive Typography */
+  .text-hero {
+    @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-light tracking-tight;
+    line-height: 0.9;
+    letter-spacing: 0.15em;
+  }
+
+  .text-hero-script {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-script font-normal italic;
+    line-height: 1.2;
+  }
+
+  .text-subtitle {
+    @apply text-lg sm:text-xl lg:text-2xl font-body font-light tracking-wider;
+    letter-spacing: 0.05em;
+  }
+
+  .text-section-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-display font-semibold tracking-tight;
+  }
+
+  .text-elegant-body {
+    @apply text-base sm:text-lg leading-relaxed font-body;
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-fade-scale {
+    animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-float {
+    animation: parallaxFloat 6s ease-in-out infinite;
+  }
+
+  /* Elegant Hover Effects */
+  .hover-elegant {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  .gold-underline {
+    @apply relative;
+  }
+
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5;
+    background-color: hsl(var(--primary));
+    width: 0;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gold-underline.active::after {
+    width: 100%;
+  }
+
+  /* Clean Mobile Styles */
+  @media (max-width: 768px) {
+    * {
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+    }
+
+    img {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      filter: none !important;
+    }
+
+    .shadow-elegant,
+    .shadow-soft,
+    .shadow-warm {
+      box-shadow: none !important;
+    }
+
+    /* Enhanced Mobile Layout Improvements */
+    section {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .max-w-4xl, .max-w-3xl, .max-w-2xl {
+      max-width: 100% !important;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    /* Countdown section mobile improvements */
+    .grid-cols-4 {
+      gap: 0.5rem !important;
+    }
+
+    /* Card padding adjustments */
+    .p-8 {
+      padding: 1rem !important;
+    }
+
+    .p-6 {
+      padding: 0.75rem !important;
+    }
+
+    /* Image sizing for mobile */
+    .w-64 {
+      width: 12rem !important;
+    }
+
+    .h-64 {
+      height: 12rem !important;
+    }
+
+    /* Typography adjustments */
+    .text-4xl {
+      font-size: 2rem !important;
+    }
+
+    .text-5xl {
+      font-size: 2.5rem !important;
+    }
+
+    .text-6xl {
+      font-size: 3rem !important;
+    }
+
+    /* Hero section specific mobile fixes - moved to component */
+
+    /* Slideshow mobile fixes - exactly like video */
+    #slideshow img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      object-position: top !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(34, 80, 149, 0.3);
+    @apply rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(34, 80, 149, 0.5);
+  }
+
+  /* Remove any glass/overlay effects and unwanted borders */
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Fix the red border issue */
+  section {
+    border: none !important;
+    outline: none !important;
+  }
+
+  /* Allow Tailwind dark mode classes to work properly */
+
+
+
+  /* Restore proper border-radius for UI elements that need it */
+  .rounded-lg {
+    border-radius: 0.5rem !important;
+  }
+
+  .rounded-xl {
+    border-radius: 0.75rem !important;
+  }
+
+  .rounded-2xl {
+    border-radius: 1rem !important;
+  }
+
+  /* Accessible focus styles for blue theme */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* From Uiverse.io by mrhyddenn */
+  .shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    background: rgb(0,140,255);
+    box-shadow: 0 0 25px rgb(0,140,255);
+  }
+
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0,140,255),
+                0 0 25px rgb(0,140,255),
+                0 0 50px rgb(0,140,255),
+                0 0 100px rgb(0,140,255);
+  }
+
+  /* Image Loop Animation Styles */
+  .image-loop-section {
+    position: relative;
+  }
+
+  .image-loop-container {
+    width: 100%;
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .image-loop-track {
+    display: flex;
+    animation: imageLoop 60s linear infinite;
+    width: fit-content;
+  }
+
+  .image-loop-track-static {
+    display: flex;
+    width: fit-content;
+  }
+
+  .image-loop-item {
+    flex-shrink: 0;
+    margin-right: 2rem;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .image-loop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+  }
+
+  .image-loop-item:hover .image-loop-img {
+    transform: scale(1.05);
+  }
+
+  @keyframes imageLoop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause animation on hover for better UX */
+  .image-loop-track:hover {
+    animation-play-state: paused;
+  }
+
+  /* Alternating Section Backgrounds */
+  .section-pastel-blue {
+    @apply bg-background text-foreground;
+  }
+
+  .section-hard-blue {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .image-loop-item {
+      width: 250px;
+      height: 167px;
+      margin-right: 1rem;
+    }
+
+    .image-loop-track {
+      animation-duration: 45s;
+    }
+  }
+}
+
+/* UIverse Location Guide Button */
+.location-guide-btn {
+  width: 10em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #149CEA;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-guide-btn::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: hsl(220, 80%, 45%);
+  transition: 0.5s;
+  transform-origin: center;
+  z-index: -1;
+}
+
+.location-guide-btn::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: hsl(220, 80%, 45%);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.location-guide-btn:hover::before, 
+.location-guide-btn:hover::after {
+  transform: scale(0);
+}
+
+.location-guide-btn:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}

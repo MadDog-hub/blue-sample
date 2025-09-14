@@ -1,0 +1,166 @@
+for first page
+-- change font color to white “&”
+- Remove “We’re saying i do”
+- Remove time
+
+the background music should stop when prenup video is playing, then if the prenup video stop, the background music will continue 
+
+remove this "Love is not about finding the perfect person, but about seeing an imperfect person perfectly."
+also remove that black tint or what ever can call to it
+
+before this part "WE ARE FINALLY
+SAYING "I DO"" add at the top of it JEIZL and KENNETH, make that name emphasize, make it modern cursive and elegant. remove the rsvp button to that section, and just make it to navigation like down arrow that navigate to rsvp section
+
+before this part"Will you accept this invitation?
+Please respond on or before" put the date and time and location, and countdown timer at the top of it, the layout of date and time and location is like the 2nd image I send, but make it more emphasize and make it cursive or elegant and modern font 
+
+change this text "Countdown to Forever" into "Forever starts soon"
+
+delete the forever starts soon and This event is strictly by invitation only.
+
+Kindly RSVP on or before August 20, 2025 to ensure we can accommodate you on our special day.
+
+the deadline of rsvp change it to auguest 22 instead of august 20
+
+change the our love story into our story, and here is the right our story "It was after class in 2013 that their paths crossed for the very first time.
+In the fading light of the university parking lot, Kenneth and Jeizl were introduced with a simple exchange of names and smiles. Moments later, they were in a shared ride home with friends — Kenneth at the wheel, Jeizl in the back seat… neither of them knew that this random encounter would be the first page of their love story.
+
+Kenneth spent the year that followed finding little ways to make Jeizl smile: a thoughtful message here, a shared meal there, and countless moments that made her feel truly seen. *It wasn’t rushed; it was steady, patient, and real.*
+
+For more than a decade, they became each other’s safe place — growing side by side through every season of life, celebrating wins, holding on through challenges, and building a *love that feels like home.*
+
+In 2024, surrounded by the people who matter most, Kenneth finally asked the question his heart had been holding for so long. With her “yes” they stepped into the next chapter — a lifetime of love, laughter, and the promise of forever."
+
+Change“I choose you forever and always” to “DY Missing Piece”
+change the image on that part by this images:
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755012195/3S7A8479_1_r11vpj.jpg
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755012195/3S7A8274_11_szffxb.jpg
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755012195/3S7A7802_2_a2af0n.jpg
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755012197/3S7A8218_1_yxuskq.jpg
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755012197/3S7A82166_t10wrx.jpg
+
+
+change the Our Prenup Video into Save the Date Video
+remove that brown color, I want plain white like the background of the website
+
+change the Event Timeline into Wedding Timeline
+remove "Join us for a day filled with love, laughter, and unforgettable memories as we celebrate our union"
+here's the updated wedding timeline
+2:15pm Ceremony 
+4:00pm Photos 
+4:30pm cocktails 
+7:00pm dinner 
+9:00pm party
+
+on ceremony, put the image at the top after the ceremony, here's the new image for ceremony
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755013747/528272661_2330353877367703_317162366725678148_n-removebg-preview_euk5di.png
+
+this part of reception "Address
+Sierra Lane Garden
+
+123 Anywhere Street
+
+Tagaytay, Philippines
+
+The ceremony will be held at Madre de Dios Chapel. It's a lovely sacred venue.
+
+Plenty of parking at the front.
+
+Reception to follow." change it into We will exchange vows at Madre de Dios Chapel in Tagaytay Highlands, a beautiful chapel surrounded by lush greenery and cool mountain air.
+
+Parking is available near the chapel, so we recommend arriving early to secure a good spot.
+
+To enjoy the scenery and for easier access, guests are encouraged to take the Santa Rosa Exit and proceed to Tagaytay Highlands Main Entrance when selecting routes on Google Maps or Waze.
+
+on reception, same as ceremony, put the image after the reception, here's the new image for reception:
+https://res.cloudinary.com/dbiboclqa/image/upload/v1755013692/522684947_4096852087241511_2099849351157419984_n-removebg-preview_falou3.png
+
+change this "Address
+Serifina Villa
+
+123 Anywhere Street
+
+Tagaytay, Philippines
+
+Come for the love, stay for the party!
+
+Please join us for dinner, cocktails, and dancing!
+
+Reception is about 20 min drive away
+
+www.midlandsveranda.com" into Please join us for dinner, cocktails and dancing!
+
+Midlands Veranda is also located within Tagaytay Highlands, just a 5-minute walk from Madre de Dios Chapel.
+
+change Dress Code into Attire guide
+this part "STRICTLY FORMAL
+
+Elegance is the only beauty that never fades"
+make it smaller also it's container so it will not looks like header
+
+remove the color palletes
+
+make the image of ladies more bigger
+on ladies description, delete this part "Please choose sophisticated styles that complement the formal atmosphere."
+
+in the container of the ladies, add this image after this "Floor-length formal gowns in the color palette below." image: https://res.cloudinary.com/dbiboclqa/image/upload/v1755013804/519428760_24552310207783945_1683405038722244104_n_vhbnij.jpg this image is the color pallete, don't remove the image of ladies at the top
+
+for gentlemen replace the image of it by this: https://res.cloudinary.com/dbiboclqa/image/upload/v1755013747/532239154_1301329915030095_1205667868082236687_n-removebg-preview_srt9sk.png
+
+for additional guidelines, change the description into 
+"- Avoid wearing white, ivory, or cream, as these colors are reserved for the bride.
+
+- 
+- For this formal event, cocktail dresses and short gowns are not suitable.
+
+- Kindly ensure your attire is respectful and appropriate for a religious ceremony.
+
+- Wear comfortable formal shoes so you can dance all night!"
+
+- remove wedding entourage 
+
+- for wedding gifts 
+replace the "Your love, laughter and presence on our wedding day is the greatest gift of all.
+
+We don't have a list of pots and pans, just hopes and dreams and honeymoon plans.
+
+If giving a gift is on your mind, then a contribution would be kind.
+
+" by 
+"Your presence at our wedding is the greatest gift. Should you wish to bless us further, a contribution toward building our first home would be deeply appreciated. This home will be the foundation of our life together and a place where lifelong memories will be made."
+then remove the Monetary Gifts, Heartfelt Wishes and this part ""The best gifts are those that come from the heart. Your love and support as we begin this new chapter is all we could ever ask for."
+
+— Kenneth & Jeizl"
+replace them by this bpi: https://res.cloudinary.com/dbiboclqa/image/upload/v1755013786/526765929_1257484575837230_1343058166809115629_n_y2ybdi.jpg
+
+gcash: https://res.cloudinary.com/dbiboclqa/image/upload/v1755013785/526693785_1093088002314041_3562987169417511188_n_cwahup.jpg
+
+in rsvp section
+change the time by 2:30
+
+deadline is august 22
+this part "Please confirm your attendance by clicking the button below. We're excited to celebrate this special moment with you!" make the font of it like by this "Your presence would make our day complete"
+
+on faqs section
+
+remove the RSVP
+on May I invite a "PLUS ONE" to the event, change the answer on that by this
+"As much as we would love to celebrate with all our friends and family, we are only able to accommodate a limited number of guests. We appreciate your understanding that entry will be limited to those listed on our guest list."
+
+remove the I said "NO" to the RSVP but I had a change of plans-I can attend now! What should I do?
+and Can I sit anywhere at the reception?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
