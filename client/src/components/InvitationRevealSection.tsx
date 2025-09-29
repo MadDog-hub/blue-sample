@@ -53,7 +53,7 @@ const InvitationRevealSection = () => {
 
   return (
     <motion.section 
-      className="section-hard-blue relative min-h-screen w-full overflow-hidden"
+      className="section-hard-blue relative min-h-screen w-full overflow-hidden px-0"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 2.5 } : { duration: 0 }}
@@ -76,7 +76,7 @@ const InvitationRevealSection = () => {
       <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
         {/* Hidden Invitation Message */}
         <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-2xl mx-auto px-4 w-full"
+          className="relative z-0 text-center max-w-2xl w-full px-4 pointer-events-none"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={allCardsRemoved ? { 
             opacity: 1, 
@@ -103,7 +103,7 @@ const InvitationRevealSection = () => {
         </motion.div>
 
         {/* Draggable Pirate Images */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-0 flex-wrap">
+        <div className="absolute inset-0 flex items-center justify-center gap-0 flex-wrap z-10">
           {pirates.map((pirate) => {
             if (removedCards.has(pirate.id)) return null;
             
