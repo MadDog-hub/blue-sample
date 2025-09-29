@@ -128,7 +128,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
             data-testid="invitation-paper"
           >
             {/* Paper background */}
-            <div className="bg-white rounded-lg shadow-2xl p-6 max-w-2xl border border-gray-200 transform">
+            <div className="bg-white rounded-lg shadow-2xl p-6 max-w-3xl border border-gray-200 transform">
               {/* Paper content */}
               <motion.div
                 initial={animationsEnabled ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
