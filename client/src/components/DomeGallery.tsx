@@ -696,11 +696,6 @@ export default function DomeGallery({
     }
     
     body.dg-scroll-lock {
-      position: fixed !important;
-      top: 0;
-      left: 0;
-      width: 100% !important;
-      height: 100% !important;
       overflow: hidden !important;
       touch-action: none !important;
       overscroll-behavior: contain !important;
@@ -782,10 +777,14 @@ export default function DomeGallery({
                     tabIndex={0}
                     aria-label={it.alt || 'Open image'}
                     onClick={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       if (performance.now() - lastDragEndAt.current < 80) return;
                       openItemFromElement(e.currentTarget as HTMLElement);
                     }}
                     onTouchEnd={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
                       if (performance.now() - lastDragEndAt.current < 80) return;
                       openItemFromElement(e.currentTarget);
                     }}
