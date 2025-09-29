@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import { LinkPreview } from '@/components/ui/link-preview';
 
 const VenueSection = () => {
   const { animationsEnabled } = useAnimationContext();
@@ -120,13 +121,13 @@ const VenueSection = () => {
                     </p>
                   </div>
                   <div className="text-right">
-                    <button
-                      className="location-guide-btn"
+                    <LinkPreview
+                      url={venue.mapUrl}
+                      className="location-guide-btn font-body text-primary-foreground/90 hover:text-primary-foreground transition-colors duration-200"
                       data-testid={`button-${venue.title.toLowerCase()}-location`}
-                      onClick={() => window.open(venue.mapUrl, '_blank')}
                     >
                       {venue.locationGuide}
-                    </button>
+                    </LinkPreview>
                   </div>
                 </div>
 
