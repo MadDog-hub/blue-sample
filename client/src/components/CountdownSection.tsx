@@ -59,7 +59,7 @@ const CountdownSection = () => {
 
         {/* Countdown Timer Grid */}
         <motion.div 
-          className="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto"
+          className="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto text-[#be7c09]"
           initial={animationsEnabled ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 0.6 } : { duration: 0 }}
