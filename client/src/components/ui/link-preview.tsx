@@ -69,16 +69,16 @@ export const LinkPreview = ({ children, url, className }: LinkPreviewProps) => {
               y: 20,
               scale: 0.6,
             }}
-            className="absolute z-50 w-80 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden"
+            className="absolute z-50 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden"
             style={{
-              top: '100%',
+              bottom: '100%',
               left: '50%',
               transform: 'translateX(-50%)',
-              marginTop: '10px',
+              marginBottom: '10px',
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
             }}
           >
-            <div className="w-full h-48 bg-neutral-100 dark:bg-neutral-800 relative">
+            <div className="w-full h-36 bg-neutral-100 dark:bg-neutral-800 relative">
               {shouldLoad ? (
                 <>
                   <iframe
