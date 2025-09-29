@@ -50,7 +50,7 @@ const RSVPSection = () => {
 
             {/* RSVP Message */}
             <div className="space-y-6 mb-8">
-              <p className="text-xl font-script italic text-primary leading-relaxed" data-testid="text-rsvp-message">
+              <p className="text-xl font-script italic leading-relaxed text-[#041b49]" data-testid="text-rsvp-message">
                 Your presence would make our day complete
               </p>
               <p className="text-xl font-script italic text-primary leading-relaxed" data-testid="text-rsvp-details">
@@ -93,7 +93,7 @@ const RSVPSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 11.4 } : { duration: 0 }}
         >
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-[#041b49]">
             Can't wait to celebrate with you! If you have any questions or special dietary requirements, please let us know when you RSVP.
           </p>
         </motion.div>
