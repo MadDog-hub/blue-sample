@@ -37,9 +37,12 @@
     --accent: 216 63% 78%; /* Updated pastel blue accent */
     --accent-foreground: 220 80% 30%; /* Darker blue text */
 
-    /* Gold/Special Accent - muted elegant gold */
+    /* Gold/Special Accent - for light backgrounds */
     --gold: 38 91% 39%; /* #bf900b - Elegant muted gold */
     --gold-foreground: 38 20% 20%; /* Dark text on gold */
+    
+    /* Bright Gold - for dark backgrounds */
+    --gold-bright: 46 100% 56%; /* #ffbd1c - Bright gold for dark backgrounds */
 
     /* Dress Code Palette - adapted for blue light theme */
     --warm-brown: 215 55% 75%; /* Warm light blue */

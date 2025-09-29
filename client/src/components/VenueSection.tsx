@@ -50,7 +50,7 @@ const VenueSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 6.8 } : { duration: 0 }}
         >
-          <h1 className="text-5xl font-display italic text-gold mb-8" data-testid="text-venue-section-title">
+          <h1 className="text-5xl font-display italic text-gold-bright mb-8" data-testid="text-venue-section-title">
             Venue
           </h1>
         </motion.div>
@@ -70,10 +70,10 @@ const VenueSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={animationsEnabled ? { duration: 0.6, ease: "easeOut", delay: 7.0 + (index * 0.4) } : { duration: 0 }}
               >
-                <h2 className="font-script italic text-gold mb-4 text-[35px]" data-testid={`text-${venue.title.toLowerCase()}-title`}>
+                <h2 className="font-script italic text-gold-bright mb-4 text-[35px]" data-testid={`text-${venue.title.toLowerCase()}-title`}>
                   {venue.title}
                 </h2>
-                <h3 className="font-body text-gold mb-4 text-lg" data-testid={`text-${venue.title.toLowerCase()}-name`}>
+                <h3 className="font-body text-gold-bright mb-4 text-lg" data-testid={`text-${venue.title.toLowerCase()}-name`}>
                   {venue.name}
                 </h3>
               </motion.div>
@@ -144,7 +144,7 @@ const VenueSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 8.4 } : { duration: 0 }}
         >
-          <h3 className="text-2xl font-display text-gold mb-4 font-medium">Unplugged Ceremony</h3>
+          <h3 className="text-2xl font-display text-gold-bright mb-4 font-medium">Unplugged Ceremony</h3>
           <p className="text-base font-body text-primary-foreground/90 leading-relaxed mb-4">
             We kindly ask that the ceremony be camera-free so everyone can be fully present in the moment. Once we move to the reception venue, please feel free to take as many photos and videos as you like—we'd love for you to help us capture more memories!
           </p>
