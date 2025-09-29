@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { Clock, Camera, Utensils, Music, Heart } from 'lucide-react';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import OceanStickers from '@/components/OceanStickers';
 
 interface TimelineEvent {
     time: string;
@@ -22,6 +23,8 @@ export default function ScrollTriggeredTimeline() {
             animate={{ opacity: 1 }}
             transition={animationsEnabled ? { duration: 0.8, ease: "easeOut" } : { duration: 0 }}
         >
+            {/* Ocean Stickers */}
+            <OceanStickers variant="section" density="medium" />
             {/* Enhanced Background Decorative Elements */}
             <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-[#333333] rounded-full"></div>
@@ -105,16 +108,37 @@ function TimelineCard({ timelineEvent, i }: TimelineCardProps) {
         >
             <div style={{ ...splash, background }} />
             <motion.div style={card} variants={cardVariants} className="card">
-                <div className="flex flex-col items-center justify-center h-full text-center px-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                        <IconComponent className="w-8 h-8 text-white" />
+                {/* Elegant overlay pattern */}
+                <div className="absolute inset-0 opacity-5" style={{
+                    background: 'radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2), transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15), transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1), transparent 50%)'
+                }}></div>
+                
+                <div className="flex flex-col items-center justify-center h-full text-center px-6 relative z-10">
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 relative" style={{
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
+                        boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3)',
+                        border: '1px solid rgba(255, 255, 255, 0.3)'
+                    }}>
+                        <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
                     </div>
-                    <div className="text-3xl font-display font-bold text-white mb-2">
+                    
+                    <div className="text-4xl font-display font-bold text-white mb-3 drop-shadow-lg" style={{
+                        background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text'
+                    }}>
                         {timelineEvent.time}
                     </div>
-                    <div className="text-lg font-body text-white/90 leading-tight">
+                    
+                    <div className="text-xl font-body text-white/95 leading-relaxed drop-shadow-sm">
                         {timelineEvent.event}
                     </div>
+                    
+                    {/* Elegant bottom accent */}
+                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-px" style={{
+                        background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)'
+                    }}></div>
                 </div>
             </motion.div>
         </motion.div>
@@ -174,12 +198,15 @@ const card: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 20,
-    background: "rgba(23, 22, 16, 0.9)",
+    borderRadius: 24,
+    background: "linear-gradient(135deg, rgba(23, 22, 16, 0.95) 0%, rgba(51, 51, 51, 0.85) 50%, rgba(23, 22, 16, 0.95) 100%)",
+    backdropFilter: "blur(20px)",
     boxShadow:
-        "0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075), 0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075), 0 0 16px hsl(0deg 0% 0% / 0.075)",
+        "0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2)",
     transformOrigin: "10% 60%",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
+    border: "1px solid rgba(255, 255, 255, 0.2)",
+    position: "relative",
+    overflow: "hidden",
 };
 
 /**

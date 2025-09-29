@@ -2,7 +2,6 @@ import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
 const heroImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/hero-cover_tfuqru.png';
 import { useAnimationContext } from '@/contexts/AnimationContext';
-import OceanStickers from '@/components/OceanStickers';
 
 const HeroSection = () => {
   const [showElements, setShowElements] = useState(false);
@@ -19,8 +18,6 @@ const HeroSection = () => {
         backgroundAttachment: 'scroll'
       }}
     >
-      {/* Ocean Stickers */}
-      <OceanStickers variant="hero" density="medium" />
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
       {/* Content */}

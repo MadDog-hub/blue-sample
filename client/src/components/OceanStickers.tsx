@@ -37,17 +37,20 @@ const OceanStickers = ({ variant = 'section', density = 'medium', className = ''
         ];
       case 'section':
         return [
-          { top: '10%', left: '5%', size: 'w-6 h-6', rotate: 'rotate-12', opacity: 'opacity-20' },
-          { top: '20%', right: '7%', size: 'w-8 h-8', rotate: 'rotate-[-18deg]', opacity: 'opacity-25' },
-          { top: '80%', left: '8%', size: 'w-7 h-7', rotate: 'rotate-[25deg]', opacity: 'opacity-20' },
-          { top: '85%', right: '10%', size: 'w-5 h-5', rotate: 'rotate-[-10deg]', opacity: 'opacity-30' },
+          { top: '10%', left: '5%', size: 'w-8 h-8', rotate: 'rotate-12', opacity: 'opacity-60' },
+          { top: '20%', right: '7%', size: 'w-10 h-10', rotate: 'rotate-[-18deg]', opacity: 'opacity-70' },
+          { top: '80%', left: '8%', size: 'w-9 h-9', rotate: 'rotate-[25deg]', opacity: 'opacity-65' },
+          { top: '85%', right: '10%', size: 'w-7 h-7', rotate: 'rotate-[-10deg]', opacity: 'opacity-55' },
+          { top: '40%', left: '3%', size: 'w-6 h-6', rotate: 'rotate-[35deg]', opacity: 'opacity-50' },
+          { top: '60%', right: '5%', size: 'w-8 h-8', rotate: 'rotate-[-25deg]', opacity: 'opacity-60' },
         ];
       case 'footer':
         return [
-          { top: '15%', left: '5%', size: 'w-8 h-8', rotate: 'rotate-12', opacity: 'opacity-25' },
-          { top: '25%', right: '8%', size: 'w-10 h-10', rotate: 'rotate-[-18deg]', opacity: 'opacity-30' },
-          { top: '65%', left: '10%', size: 'w-6 h-6', rotate: 'rotate-[25deg]', opacity: 'opacity-20' },
-          { top: '75%', right: '15%', size: 'w-7 h-7', rotate: 'rotate-[-10deg]', opacity: 'opacity-25' },
+          { top: '15%', left: '5%', size: 'w-10 h-10', rotate: 'rotate-12', opacity: 'opacity-50' },
+          { top: '25%', right: '8%', size: 'w-12 h-12', rotate: 'rotate-[-18deg]', opacity: 'opacity-60' },
+          { top: '65%', left: '10%', size: 'w-8 h-8', rotate: 'rotate-[25deg]', opacity: 'opacity-45' },
+          { top: '75%', right: '15%', size: 'w-9 h-9', rotate: 'rotate-[-10deg]', opacity: 'opacity-55' },
+          { top: '40%', left: '3%', size: 'w-7 h-7', rotate: 'rotate-[35deg]', opacity: 'opacity-40' },
         ];
       default:
         return [];

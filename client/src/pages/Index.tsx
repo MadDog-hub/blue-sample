@@ -22,6 +22,7 @@ import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import CoverSection from '@/components/CoverSection';
 import InvitationRevealSection from '@/components/InvitationRevealSection';
+import MusicControl from '@/components/MusicControl';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
 const Index = () => {
@@ -68,102 +69,8 @@ const Index = () => {
     // Enable animations regardless of music choice - user has interacted
     setAnimationsEnabled(true);
     
-    if (consent && audioRef.current) {
-      const audio = audioRef.current;
-      
-      // Set audio properties
-      audio.volume = 0.3;
-      audio.loop = true;
-      
-      // First check if the audio source is valid
-      console.log('Checking audio source:', audio.src);
-      console.log('Audio ready state:', audio.readyState);
-      
-      // Function to attempt playing
-      const attemptPlay = () => {
-        console.log('Attempting to play background music...');
-        
-        const playPromise = audio.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log('Background music started successfully');
-          }).catch((error) => {
-            console.error('Music play failed:', {
-              message: error.message,
-              name: error.name,
-              code: error.code
-            });
-            
-            // Set up interaction listeners with better cleanup
-            setupInteractionListeners();
-          });
-        } else {
-          console.log('Play promise is undefined, setting up interaction listeners');
-          setupInteractionListeners();
-        }
-      };
-      
-      // Function to set up interaction listeners
-      const setupInteractionListeners = () => {
-        console.log('Setting up interaction listeners...');
-        
-        const interactionEvents = ['click', 'touchstart', 'keydown', 'mousedown'];
-        const playOnInteraction = () => {
-          console.log('User interaction detected, attempting to play music...');
-          
-          const retryPromise = audio.play();
-          if (retryPromise !== undefined) {
-            retryPromise.then(() => {
-              console.log('Music started successfully on user interaction');
-              // Remove all listeners
-              interactionEvents.forEach(event => {
-                document.removeEventListener(event, playOnInteraction);
-              });
-            }).catch((err) => {
-              console.error('Failed to play music on interaction:', {
-                message: err.message,
-                name: err.name,
-                readyState: audio.readyState,
-                networkState: audio.networkState
-              });
-            });
-          }
-        };
-        
-        // Add listeners
-        interactionEvents.forEach(event => {
-          document.addEventListener(event, playOnInteraction, { 
-            passive: true, 
-            once: true 
-          });
-        });
-      };
-      
-      // Check if audio is ready
-      if (audio.readyState >= 2) {
-        // Audio is loaded enough to play
-        attemptPlay();
-      } else {
-        // Wait for audio to be ready
-        const onCanPlay = () => {
-          audio.removeEventListener('canplay', onCanPlay);
-          attemptPlay();
-        };
-        
-        const onError = (e: Event) => {
-          audio.removeEventListener('error', onError);
-          console.error('Audio loading failed:', e);
-          console.log('Audio network state:', audio.networkState);
-          console.log('Audio error:', audio.error);
-        };
-        
-        audio.addEventListener('canplay', onCanPlay);
-        audio.addEventListener('error', onError);
-        
-        // Force load the audio
-        audio.load();
-      }
-    }
+    // Music will now be controlled via the MusicControl component
+    // No auto-start functionality
   };
 
   return (
@@ -225,6 +132,9 @@ const Index = () => {
           <FAQSection />
           <Footer />
         </main>
+        
+        {/* Music Control - only show if music consent was given */}
+        {musicConsent && <MusicControl audioRef={audioRef} />}
       </div>
     </AnimationContext.Provider>
   );
