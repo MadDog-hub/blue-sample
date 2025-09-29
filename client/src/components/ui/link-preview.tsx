@@ -69,12 +69,11 @@ export const LinkPreview = ({ children, url, className }: LinkPreviewProps) => {
               y: 20,
               scale: 0.6,
             }}
-            className="absolute z-50 w-64 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden"
+            className="absolute z-50 w-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-xl overflow-hidden"
             style={{
               bottom: '100%',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              marginBottom: '10px',
+              left: '0',
+              marginBottom: '8px',
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
             }}
           >
