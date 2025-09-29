@@ -145,7 +145,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
                 <h2 className="text-3xl md:text-4xl font-display italic text-yellow-600 mb-4 leading-tight">
                   You're Invited!
                 </h2>
-                <p className="text-lg md:text-xl text-gray-700 font-script italic leading-relaxed">
+                <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
                   Join us as we embark on our greatest adventure together - 
                   a celebration of love, laughter, and happily ever after
                 </p>
