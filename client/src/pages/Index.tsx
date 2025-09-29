@@ -11,7 +11,7 @@ const cover3Image = 'https://res.cloudinary.com/dbciwaal4/image/upload/v17591516
 import CountdownSection from '@/components/CountdownSection';
 import StorySection from '@/components/StorySection';
 import VideoSection from '@/components/VideoSection';
-import TimelineSection from '@/components/TimelineSection';
+import ScrollTriggeredTimeline from '@/components/ScrollTriggeredTimeline';
 import VenueSection from '@/components/VenueSection';
 import DressCodeSection from '@/components/DressCodeSection';
 import EntourageSection from '@/components/EntourageSection';
@@ -207,7 +207,7 @@ const Index = () => {
             alt="Andrei & Sam Wedding Cover Image 1"
           />
           <VideoSection />
-          <TimelineSection />
+          <ScrollTriggeredTimeline />
           <VenueSection />
           <CoverSection 
             imageUrl={cover2Image}
