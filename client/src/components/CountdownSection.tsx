@@ -83,7 +83,7 @@ const CountdownSection = () => {
               data-testid={`countdown-${item.label.toLowerCase()}`}
             >
               <motion.div 
-                className="text-4xl md:text-5xl font-display font-bold text-primary mb-2"
+                className="text-4xl md:text-5xl font-display font-bold mb-2 text-[#be7c09]"
                 key={item.value}
                 initial={animationsEnabled ? { opacity: 0.7, scale: 0.9 } : { opacity: 1, scale: 1 }}
                 animate={{ opacity: 1, scale: 1 }}
