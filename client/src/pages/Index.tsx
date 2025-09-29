@@ -37,24 +37,24 @@ const Index = () => {
       const audio = audioRef.current;
       audio.volume = 0.3;
       audio.loop = true;
-      
+
       // Handle audio loading
       const handleCanPlay = () => {
         console.log('Audio is ready to play');
       };
-      
+
       const handleError = (e: Event) => {
         console.error('Audio loading error:', e);
       };
-      
+
       const handleLoadedData = () => {
         console.log('Audio data loaded successfully');
       };
-      
+
       audio.addEventListener('canplay', handleCanPlay);
       audio.addEventListener('error', handleError);
       audio.addEventListener('loadeddata', handleLoadedData);
-      
+
       return () => {
         audio.removeEventListener('canplay', handleCanPlay);
         audio.removeEventListener('error', handleError);
@@ -68,7 +68,7 @@ const Index = () => {
     setShowMusicConsent(false);
     // Enable animations regardless of music choice - user has interacted
     setAnimationsEnabled(true);
-    
+
     // Music will now be controlled via the MusicControl component
     // No auto-start functionality
   };
@@ -84,24 +84,21 @@ const Index = () => {
         style={{ display: 'none' }}
         data-testid="background-audio"
       >
-        <source 
-          src="https://res.cloudinary.com/dy7exe5ds/video/upload/v1757838604/ytmp3free.cc_brian-mcknight-marry-your-daughter-lyrics-youtubemp3free.org_rw2sfr.mp3" 
+        <source
+          src="https://res.cloudinary.com/dy7exe5ds/video/upload/v1757838604/ytmp3free.cc_brian-mcknight-marry-your-daughter-lyrics-youtubemp3free.org_rw2sfr.mp3"
           type="audio/mpeg"
         />
         {/* Fallback for browsers that don't support MP3 */}
-        <source 
-          src="https://www.soundjay.com/misc/sounds/clock-ticking-5.wav" 
+        <source
+          src="https://www.soundjay.com/misc/sounds/clock-ticking-5.wav"
           type="audio/wav"
         />
         Your browser does not support the audio element.
       </audio>
-      
-      {/* Music Consent Popup */}
-      {showMusicConsent && <MusicConsentPopup onConsent={handleMusicConsent} />}
 
       <div className="min-h-screen relative">
         <Navigation />
-        
+
         {/* Main Content Sections */}
         <main className="relative z-10">
           <HeroSection />
@@ -109,14 +106,14 @@ const Index = () => {
           <CountdownSection />
           <ImageLoop />
           <StorySection />
-          <CoverSection 
+          <CoverSection
             imageUrl={cover1Image}
             alt="Andrei & Sam Wedding Cover Image 1"
           />
           <VideoSection />
           <ScrollTriggeredTimeline />
           <VenueSection />
-          <CoverSection 
+          <CoverSection
             imageUrl={cover2Image}
             alt="Andrei & Sam Wedding Cover Image 2"
           />
@@ -125,16 +122,16 @@ const Index = () => {
           <RSVPSection />
           <EntourageSection />
           <GiftSection />
-          <CoverSection 
+          <CoverSection
             imageUrl={cover3Image}
             alt="Andrei & Sam Wedding Cover Image 3"
           />
           <FAQSection />
           <Footer />
         </main>
-        
-        {/* Music Control - only show if music consent was given */}
-        {musicConsent && <MusicControl audioRef={audioRef} />}
+
+        {/* Music Control - always show */}
+        <MusicControl audioRef={audioRef} />
       </div>
     </AnimationContext.Provider>
   );
