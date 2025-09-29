@@ -64,7 +64,14 @@ const InvitationRevealSection = () => {
       <motion.div 
         className="absolute top-8 left-0 right-0 z-20 flex justify-center"
         initial={animationsEnabled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={allCardsRemoved ? { 
+          opacity: 0, 
+          y: -20,
+          transition: { duration: 0.5, ease: "easeOut" }
+        } : { 
+          opacity: 1, 
+          y: 0 
+        }}
         transition={animationsEnabled ? { duration: 0.8, delay: 3.0 } : { duration: 0 }}
       >
         <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">

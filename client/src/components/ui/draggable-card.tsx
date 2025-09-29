@@ -54,13 +54,13 @@ export const DraggableCardBody = ({
     <motion.div
       ref={cardRef}
       className={`cursor-grab active:cursor-grabbing ${className}`}
-      style={{ x, y, rotateX, rotateY, z: 100 }}
+      style={{ x, y, rotateX, rotateY, zIndex: 100 }}
       drag
       dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
       dragElastic={0.6}
       whileDrag={{ 
         scale: 1.1, 
-        z: 1000,
+        zIndex: 1000,
         transition: { duration: 0.2 }
       }}
       onDragEnd={handleDragEnd}

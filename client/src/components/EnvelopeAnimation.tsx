@@ -72,10 +72,10 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
             fill="#f8f9fa"
             stroke="#e9ecef"
             strokeWidth="2"
+            style={{ transformBox: "fill-box", transformOrigin: "50% 0%" }}
             initial={false}
             animate={showPaper ? {
               rotateX: 45,
-              originY: "20px",
               transition: { duration: 0.5, ease: "easeInOut" }
             } : {}}
           />
