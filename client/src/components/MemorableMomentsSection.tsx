@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { FolderOpen, Folder } from 'lucide-react';
+import { FolderOpen, Images, Folder } from 'lucide-react';
+import DomeGallery from './DomeGallery';
 
 // Prenup photos from Cloudinary
 const prenup1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/prenup1_uy0r6d.png';
@@ -18,6 +19,16 @@ const MemorableMomentsSection = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const images = [
+    { src: prenup1, alt: "Our Beginning - The moment it all started" },
+    { src: prenup2, alt: "The Proposal - She said yes!" },
+    { src: prenup3, alt: "Growing Together - Building our love story" },
+    { src: prenup4, alt: "Adventures - Creating memories together" },
+    { src: prenup5, alt: "Happy Moments - Sharing joy and laughter" },
+    { src: prenup6, alt: "Perfect Day - Every moment with you" },
+    { src: prenup7, alt: "Love Story - Writing our chapter" }
+  ];
+
+  const dialogImages = [
     { src: prenup1, title: "Our Beginning", description: "The moment it all started" },
     { src: prenup2, title: "The Proposal", description: "She said yes!" },
     { src: prenup3, title: "Growing Together", description: "Building our love story" },
@@ -69,102 +80,39 @@ const MemorableMomentsSection = () => {
           </p>
         </motion.div>
 
-        {/* Animated Folder Component with React Bits Style */}
+        {/* Dome Gallery */}
         <motion.div 
-          className="flex flex-col items-center space-y-8"
+          className="w-full h-96 mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
         >
-          {/* Interactive Folder Display */}
-          <motion.div 
-            className="relative group cursor-pointer"
-            onClick={() => setIsGalleryOpen(true)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ rotateY: 0 }}
-            animate={{ rotateY: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            {/* Folder Background with Gradient */}
-            <motion.div
-              className="relative"
-              whileHover={{ rotateY: 10, rotateX: 5 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500" />
-              
-              {/* Main Folder Icon */}
-              <motion.div
-                className="relative bg-gradient-to-br from-primary to-primary/80 p-8 rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500"
-                whileHover={{ 
-                  background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary))/0.9 100%)",
-                }}
-              >
-                <Folder 
-                  className="w-24 h-24 text-white drop-shadow-lg"
-                  data-testid="folder-prenup-photos"
-                />
-                
-                {/* Floating Images Preview */}
-                <motion.div 
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500"
-                  initial={{ scale: 0.8, y: 10 }}
-                  whileHover={{ scale: 1, y: 0 }}
-                >
-                  <div className="grid grid-cols-3 gap-1 p-4">
-                    {images.slice(0, 6).map((image, index) => (
-                      <motion.div
-                        key={index}
-                        className="w-6 h-6 rounded-sm overflow-hidden shadow-md"
-                        initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                        animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <img
-                          src={image.src}
-                          alt=""
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-              </motion.div>
-            </motion.div>
+          <DomeGallery
+            images={images}
+            fit={0.6}
+            grayscale={false}
+            overlayBlurColor="#1a1a2e"
+            imageBorderRadius="20px"
+            openedImageBorderRadius="20px"
+            maxVerticalRotationDeg={8}
+            dragSensitivity={15}
+          />
+        </motion.div>
 
-            {/* Floating Count Badge */}
-            <motion.div 
-              className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", delay: 1.5 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              {images.length}
-            </motion.div>
-
-            {/* Hover Tooltip */}
-            <motion.div 
-              className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300"
-              initial={{ y: 10 }}
-              whileHover={{ y: 0 }}
-            >
-              <div className="bg-black text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-lg">
-                Click to view all photos
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-black"></div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Open Gallery Button */}
+        {/* Open All Photos Button */}
+        <motion.div 
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.4 }}
+        >
           <Button
             size="lg"
             className="bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-script text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => setIsGalleryOpen(true)}
-            data-testid="button-open-gallery"
+            data-testid="button-open-all-photos"
           >
-            <FolderOpen className="w-5 h-5 mr-2" />
+            <Images className="w-5 h-5 mr-2" />
             Open All Photos
           </Button>
         </motion.div>
@@ -180,7 +128,7 @@ const MemorableMomentsSection = () => {
                 <div className="flex items-center justify-between text-white">
                   <h3 className="text-xl font-script">Prenup Photos</h3>
                   <span className="text-sm">
-                    {selectedImageIndex + 1} of {images.length}
+                    {selectedImageIndex + 1} of {dialogImages.length}
                   </span>
                 </div>
               </div>
@@ -188,8 +136,8 @@ const MemorableMomentsSection = () => {
               {/* Main Image */}
               <div className="w-full h-full flex items-center justify-center">
                 <img
-                  src={images[selectedImageIndex].src}
-                  alt={images[selectedImageIndex].title}
+                  src={dialogImages[selectedImageIndex].src}
+                  alt={dialogImages[selectedImageIndex].title}
                   className="max-w-full max-h-full object-contain"
                   data-testid={`img-gallery-main-${selectedImageIndex}`}
                 />
@@ -214,8 +162,8 @@ const MemorableMomentsSection = () => {
               {/* Image Info */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
                 <div className="text-white text-center">
-                  <h4 className="text-lg font-script mb-1">{images[selectedImageIndex].title}</h4>
-                  <p className="text-sm opacity-80">{images[selectedImageIndex].description}</p>
+                  <h4 className="text-lg font-script mb-1">{dialogImages[selectedImageIndex].title}</h4>
+                  <p className="text-sm opacity-80">{dialogImages[selectedImageIndex].description}</p>
                 </div>
               </div>
             </div>
@@ -223,7 +171,7 @@ const MemorableMomentsSection = () => {
             {/* Thumbnail Strip */}
             <div className="p-4 bg-white dark:bg-gray-900">
               <div className="flex space-x-2 overflow-x-auto">
-                {images.map((image, index) => (
+                {dialogImages.map((image, index) => (
                   <button
                     key={index}
                     onClick={() => handleImageClick(index)}
