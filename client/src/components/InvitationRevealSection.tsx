@@ -22,31 +22,31 @@ const InvitationRevealSection = () => {
     {
       id: 1,
       image: pirate1,
-      className: "relative",
+      className: "absolute top-[20%] left-[15%] rotate-[-15deg] cursor-pointer",
     },
     {
       id: 2,
       image: pirate2,
-      className: "relative",
+      className: "absolute top-[60%] left-[25%] rotate-[22deg] cursor-pointer",
     },
     {
       id: 3,
       image: pirate3,
-      className: "relative",
+      className: "absolute top-[10%] left-[50%] rotate-[-8deg] cursor-pointer",
     },
     {
       id: 4,
       image: pirate4,
-      className: "relative",
+      className: "absolute top-[45%] right-[20%] rotate-[18deg] cursor-pointer",
     },
     {
       id: 5,
       image: pirate5,
-      className: "relative",
+      className: "absolute top-[25%] right-[10%] rotate-[-12deg] cursor-pointer",
     },
   ];
 
-  const handleCardRemoved = (pirateId: number) => {
+  const handlePirateClicked = (pirateId: number) => {
     setRemovedCards(prev => new Set(Array.from(prev).concat(pirateId)));
   };
 
@@ -75,8 +75,8 @@ const InvitationRevealSection = () => {
         transition={animationsEnabled ? { duration: 0.8, delay: 3.0 } : { duration: 0 }}
       >
         <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-          <p className="text-white text-sm md:text-base font-medium text-center" data-testid="text-drag-instruction">
-            🏴‍☠️ Drag away the pirates to reveal your invitation
+          <p className="text-white text-sm md:text-base font-medium text-center" data-testid="text-click-instruction">
+            🏴‍☠️ Click on the pirates to reveal your invitation
           </p>
         </div>
       </motion.div>
@@ -90,8 +90,8 @@ const InvitationRevealSection = () => {
           />
         </div>
 
-        {/* Draggable Pirate Images */}
-        <div className="absolute inset-0 flex items-center justify-center gap-0 flex-wrap z-10">
+        {/* Clickable Pirate Images */}
+        <div className="absolute inset-0 z-10">
           {pirates.map((pirate) => {
             if (removedCards.has(pirate.id)) return null;
             
@@ -99,13 +99,14 @@ const InvitationRevealSection = () => {
               <DraggableCardBody 
                 key={pirate.id}
                 className={pirate.className}
-                onDragEnd={() => handleCardRemoved(pirate.id)}
+                onClick={() => handlePirateClicked(pirate.id)}
                 noCard={true}
+                clickMode={true}
               >
                 <img
                   src={pirate.image}
                   alt={`Pirate ${pirate.id}`}
-                  className="pointer-events-none relative z-10 h-24 w-24 md:h-32 md:w-32 object-contain"
+                  className="relative z-10 h-24 w-24 md:h-32 md:w-32 object-contain"
                   data-testid={`img-pirate-${pirate.id}`}
                 />
               </DraggableCardBody>
