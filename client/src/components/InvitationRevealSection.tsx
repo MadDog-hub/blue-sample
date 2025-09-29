@@ -5,6 +5,7 @@ import {
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import EnvelopeAnimation from './EnvelopeAnimation';
 
 // Pirate images
 import pirate1 from "@assets/image-removebg-preview_1759155973200.png";
@@ -74,33 +75,13 @@ const InvitationRevealSection = () => {
       </motion.div>
 
       <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
-        {/* Hidden Invitation Message */}
-        <motion.div 
-          className="relative z-0 text-center max-w-2xl w-full px-4 pointer-events-none"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={allCardsRemoved ? { 
-            opacity: 1, 
-            scale: 1,
-            transition: { duration: 0.8, ease: "easeOut" }
-          } : { 
-            opacity: 0, 
-            scale: 0.8 
-          }}
-          data-testid="text-invitation-message"
-        >
-          <h2 className="text-4xl md:text-6xl font-display italic text-white mb-6 leading-tight">
-            You're Invited!
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 font-script italic leading-relaxed">
-            Join us as we embark on our greatest adventure together - 
-            a celebration of love, laughter, and happily ever after
-          </p>
-          <div className="mt-8 inline-flex items-center space-x-2">
-            <div className="w-12 h-px bg-white/50"></div>
-            <div className="w-3 h-3 bg-white/70 rounded-full animate-pulse"></div>
-            <div className="w-12 h-px bg-white/50"></div>
-          </div>
-        </motion.div>
+        {/* Envelope Animation */}
+        <div className="relative z-0 w-full flex items-center justify-center pointer-events-none">
+          <EnvelopeAnimation 
+            isVisible={allCardsRemoved} 
+            animationsEnabled={animationsEnabled}
+          />
+        </div>
 
         {/* Draggable Pirate Images */}
         <div className="absolute inset-0 flex items-center justify-center gap-0 flex-wrap z-10">
