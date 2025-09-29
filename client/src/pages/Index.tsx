@@ -21,6 +21,7 @@ import MemorableMomentsSection from '@/components/MemorableMomentsSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import CoverSection from '@/components/CoverSection';
+import InvitationRevealSection from '@/components/InvitationRevealSection';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
 const Index = () => {
@@ -197,6 +198,7 @@ const Index = () => {
         {/* Main Content Sections */}
         <main className="relative z-10">
           <HeroSection />
+          <InvitationRevealSection />
           <CountdownSection />
           <ImageLoop />
           <StorySection />
