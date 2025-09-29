@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 
-import semiformalImage from "@assets/39c08e20-9c26-49c2-94e3-894e60b153d4_1757834960927.png";
+// import semiformalImage from "@assets/39c08e20-9c26-49c2-94e3-894e60b153d4_1757834960927.png";
+const semiformalImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759163010/69d00dc0-1a94-41a9-878b-887842382fc1_hll0eh.png';
 
-import formalImage from "@assets/4193ce13-9e83-49e8-9beb-45be60110fd7_1757834960927.png";
+// import formalImage from "@assets/4193ce13-9e83-49e8-9beb-45be60110fd7_1757834960927.png";
+const formalImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759163009/46d1d577-35fa-435f-84fd-304fe01cdaaf_itglfq.png';
 
 const DressCodeSection = () => {
   const dressCodeColors = [
