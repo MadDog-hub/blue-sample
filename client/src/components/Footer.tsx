@@ -19,7 +19,7 @@ const Footer = () => {
         >
           {/* Couple Names */}
           <div>
-            <h2 className="text-3xl sm:text-4xl mb-2" style={{ fontFamily: 'Boska, serif', fontWeight: 300 }}>
+            <h2 className="text-3xl sm:text-4xl mb-2 text-gold" style={{ fontFamily: 'Boska, serif', fontWeight: 300 }}>
               Andrei
               <span className="text-primary-foreground mx-3">&</span>
               Sam

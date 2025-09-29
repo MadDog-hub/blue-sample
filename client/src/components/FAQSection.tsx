@@ -51,7 +51,7 @@ const FAQSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 11.8 }}
         >
-          <h2 className="text-5xl font-display italic text-primary mb-8" data-testid="text-faq-title">
+          <h2 className="text-5xl font-display italic text-gold mb-8" data-testid="text-faq-title">
             Frequently Asked Questions
           </h2>
           <p className="text-lg font-body text-foreground max-w-2xl mx-auto">

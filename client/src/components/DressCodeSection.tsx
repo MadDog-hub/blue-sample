@@ -41,7 +41,7 @@ const DressCodeSection = () => {
           <div className="absolute bottom-0 left-1/3 w-6 h-6 border border-[#333333]/40 rounded-full"></div>
           <div className="absolute bottom-2 right-1/3 w-3 h-3 bg-[#333333]/30 rounded-full"></div>
 
-          <h2 className="font-display italic text-primary mb-8 text-[48px]" data-testid="text-dresscode-title">
+          <h2 className="font-display italic text-gold mb-8 text-[48px]" data-testid="text-dresscode-title">
             Attire Guide
           </h2>
           <div className="bg-[#333333]/10 border border-[#333333]/20 rounded-xl p-4 max-w-lg mx-auto relative">

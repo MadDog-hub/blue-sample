@@ -26,7 +26,7 @@ const RSVPSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 10.8 } : { duration: 0 }}
         >
-          <h2 className="text-5xl font-script italic font-black text-primary mb-8" data-testid="text-rsvp-title">
+          <h2 className="text-5xl font-script italic font-black text-gold mb-8" data-testid="text-rsvp-title">
             Please RSVP
           </h2>
         </motion.div>
@@ -44,7 +44,7 @@ const RSVPSection = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Calendar className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-display font-semibold text-primary mb-2">RSVP Deadline</h3>
+              <h3 className="text-xl font-display font-semibold text-gold mb-2">RSVP Deadline</h3>
               <p className="text-lg text-muted-foreground">August 20, 2025</p>
             </div>
 

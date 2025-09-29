@@ -97,7 +97,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h2 className="text-xl font-display font-semibold text-primary">
+            <h2 className="text-xl font-display font-semibold text-gold">
               A<span className="text-gold">&</span>S
             </h2>
           </div>

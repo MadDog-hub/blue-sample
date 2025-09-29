@@ -18,7 +18,7 @@ const EntourageSection = () => {
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <motion.h2 
-          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-12 md:mb-16"
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gold mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 8.5 }}

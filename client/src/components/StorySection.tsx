@@ -180,7 +180,7 @@ const StorySection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 3.8 } : { duration: 0 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-script italic font-black text-primary-foreground mb-6 sm:mb-8" data-testid="text-story-title">
+          <h2 className="text-4xl sm:text-5xl font-script italic font-black text-gold mb-6 sm:mb-8" data-testid="text-story-title">
             Our Story
           </h2>
           <p className="text-base sm:text-lg text-primary-foreground max-w-2xl mx-auto mb-4">
@@ -234,7 +234,7 @@ const StorySection = () => {
                     <span className="text-primary font-bold text-lg sm:text-xl md:text-2xl">{card.id}</span>
                   </div>
                   
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic text-primary-foreground mb-4 sm:mb-6" data-testid={`text-story-card-${card.id}-title`}>
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic text-gold mb-4 sm:mb-6" data-testid={`text-story-card-${card.id}-title`}>
                     {card.title}
                   </h3>
                   
@@ -304,7 +304,7 @@ const StorySection = () => {
               </svg>
 
               <div className="relative z-10 space-y-6 sm:space-y-8">
-                <h3 className="text-4xl sm:text-5xl md:text-6xl font-script italic font-black text-primary-foreground mb-6 sm:mb-8" data-testid="text-story-vow-title">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-script italic font-black text-gold mb-6 sm:mb-8" data-testid="text-story-vow-title">
                   The Vow
                 </h3>
                 

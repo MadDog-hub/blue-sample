@@ -49,7 +49,7 @@ export default function ScrollTriggeredTimeline() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h2 className="text-5xl font-display italic text-primary mb-8" data-testid="text-timeline-title">
+                    <h2 className="text-5xl font-display italic text-gold mb-8" data-testid="text-timeline-title">
                         Wedding Timeline
                     </h2>
                 </motion.div>
