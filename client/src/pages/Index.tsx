@@ -21,6 +21,7 @@ import MemorableMomentsSection from '@/components/MemorableMomentsSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import CoverSection from '@/components/CoverSection';
+import RelationshipTimelineSection from '@/components/RelationshipTimelineSection';
 import { AnimationContext } from '@/contexts/AnimationContext';
 
 const Index = () => {
@@ -199,6 +200,7 @@ const Index = () => {
           <HeroSection />
           <CountdownSection />
           <ImageLoop />
+          <RelationshipTimelineSection />
           <StorySection />
           <CoverSection 
             imageUrl={cover1Image}
