@@ -29,7 +29,7 @@ const Index = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [showMusicConsent, setShowMusicConsent] = useState(true);
   const [musicConsent, setMusicConsent] = useState<boolean | null>(null);
-  const [animationsEnabled, setAnimationsEnabled] = useState(false);
+  const [animationsEnabled, setAnimationsEnabled] = useState(true);
 
   // Ensure audio is properly initialized
   useEffect(() => {
@@ -63,15 +63,7 @@ const Index = () => {
     }
   }, []);
 
-  const handleMusicConsent = (consent: boolean) => {
-    setMusicConsent(consent);
-    setShowMusicConsent(false);
-    // Enable animations regardless of music choice - user has interacted
-    setAnimationsEnabled(true);
-
-    // Music will now be controlled via the MusicControl component
-    // No auto-start functionality
-  };
+  
 
   return (
     <AnimationContext.Provider value={{ animationsEnabled }}>
