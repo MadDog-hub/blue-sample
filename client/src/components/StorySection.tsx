@@ -3,11 +3,12 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
-import firstImage from '@assets/first_1757830927000.png';
-import proposalImage from '@assets/proposal_1757830927001.png';
-import midImage from '@assets/mid_1757830927001.png';
-import loopImage from '@assets/loop_1757830927002.png';
-import loop1Image from '@assets/loop1_1757830927003.png';
+// Story images from new Cloudinary collection
+const storyImage1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/prenup1_uy0r6d.png';
+const storyImage2 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup2_ip3kvf.png';
+const storyImage3 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop1_o4jrga.png';
+const storyImage4 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop3_oujpxp.png';
+const storyImage5 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup4_qg5qgx.png';
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -23,31 +24,31 @@ const StorySection = () => {
       id: 1,
       title: "First Meeting",
       text: "Two hearts found each other in the most unexpected way. From strangers to friends, we discovered something special.",
-      image: firstImage
+      image: storyImage1
     },
     {
       id: 2, 
       title: "Growing Together",
       text: "We learned that love isn't just about the big moments—it's in the daily laughter, shared dreams, and quiet support.",
-      image: proposalImage
+      image: storyImage2
     },
     {
       id: 3,
       title: "Adventures & Challenges", 
       text: "Through every adventure and challenge, we've grown stronger. Running side by side through life's journey.",
-      image: midImage
+      image: storyImage3
     },
     {
       id: 4,
       title: "The Decision",
       text: "We knew we wanted to spend forever together. This isn't just our wedding day—it's the beginning of our greatest adventure.",
-      image: loopImage
+      image: storyImage4
     },
     {
       id: 5,
       title: "Our Future",
       text: "Today we celebrate not just our love, but all the beautiful tomorrows waiting for us. Hand in hand, heart to heart.",
-      image: loop1Image
+      image: storyImage5
     }
   ];
 

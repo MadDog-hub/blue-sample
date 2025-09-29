@@ -4,9 +4,10 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ImageLoop from '@/components/ImageLoop';
 import MusicConsentPopup from '@/components/MusicConsentPopup';
-import loop2Image from '@assets/loop2_1757830927003.png';
-import loop3Image from '@assets/loop3_1757830927004.png';
-import loop4Image from '@assets/loop4_1757830927004.png';
+// Cover images from Cloudinary
+const cover1Image = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151636/cover1_zwn56x.png';
+const cover2Image = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/cover2_wafyjj.png';
+const cover3Image = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/cover3_iztttx.png';
 import CountdownSection from '@/components/CountdownSection';
 import StorySection from '@/components/StorySection';
 import VideoSection from '@/components/VideoSection';
@@ -200,14 +201,14 @@ const Index = () => {
           <ImageLoop />
           <StorySection />
           <CoverSection 
-            imageUrl={loop2Image}
+            imageUrl={cover1Image}
             alt="Andrei & Sam Wedding Cover Image 1"
           />
           <VideoSection />
           <TimelineSection />
           <VenueSection />
           <CoverSection 
-            imageUrl={loop3Image}
+            imageUrl={cover2Image}
             alt="Andrei & Sam Wedding Cover Image 2"
           />
           <DressCodeSection />
@@ -216,7 +217,7 @@ const Index = () => {
           <EntourageSection />
           <GiftSection />
           <CoverSection 
-            imageUrl={loop4Image}
+            imageUrl={cover3Image}
             alt="Andrei & Sam Wedding Cover Image 3"
           />
           <FAQSection />

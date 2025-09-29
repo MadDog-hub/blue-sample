@@ -1,26 +1,22 @@
-import firstImage from '@assets/first_1757830927000.png';
-import proposalImage from '@assets/proposal_1757830927001.png';
-import midImage from '@assets/mid_1757830927001.png';
-import loopImage from '@assets/loop_1757830927002.png';
-import loop1Image from '@assets/loop1_1757830927003.png';
-import loop2Image from '@assets/loop2_1757830927003.png';
-import loop3Image from '@assets/loop3_1757830927004.png';
-import loop4Image from '@assets/loop4_1757830927004.png';
-import loop5Image from '@assets/loop5_1757830927005.png';
+// Image loop images from Cloudinary
+const imageLoop1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop1_o4jrga.png';
+const imageLoop2 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/imageloop2_iijitc.png';
+const imageLoop3 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop3_oujpxp.png';
+const imageLoop4 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop4_ygwlj7.png';
 import { useAnimationContext } from '@/contexts/AnimationContext';
 
 const ImageLoop = () => {
   const { animationsEnabled } = useAnimationContext();
   const images = [
-    firstImage,
-    proposalImage,
-    midImage,
-    loopImage,
-    loop1Image,
-    loop2Image,
-    loop3Image,
-    loop4Image,
-    loop5Image
+    imageLoop1,
+    imageLoop2,
+    imageLoop3,
+    imageLoop4,
+    imageLoop1,
+    imageLoop2,
+    imageLoop3,
+    imageLoop4,
+    imageLoop1
   ];
 
   return (

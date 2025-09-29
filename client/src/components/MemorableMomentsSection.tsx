@@ -4,31 +4,27 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { Button } from '@/components/ui/button';
 import { FolderOpen, Folder } from 'lucide-react';
 
-// Import all images from ImageLoop
-import firstImage from '@assets/first_1757830927000.png';
-import proposalImage from '@assets/proposal_1757830927001.png';
-import midImage from '@assets/mid_1757830927001.png';
-import loopImage from '@assets/loop_1757830927002.png';
-import loop1Image from '@assets/loop1_1757830927003.png';
-import loop2Image from '@assets/loop2_1757830927003.png';
-import loop3Image from '@assets/loop3_1757830927004.png';
-import loop4Image from '@assets/loop4_1757830927004.png';
-import loop5Image from '@assets/loop5_1757830927005.png';
+// Prenup photos from Cloudinary
+const prenup1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/prenup1_uy0r6d.png';
+const prenup2 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup2_ip3kvf.png';
+const prenup3 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup3_szk2ej.png';
+const prenup4 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup4_qg5qgx.png';
+const prenup5 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151634/prenup5_kcn3sd.png';
+const prenup6 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151634/prenup6_cwynrp.png';
+const prenup7 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151634/prenup7_b3jyd6.png';
 
 const MemorableMomentsSection = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const images = [
-    { src: firstImage, title: "Our Beginning", description: "The moment it all started" },
-    { src: proposalImage, title: "The Proposal", description: "She said yes!" },
-    { src: midImage, title: "Growing Together", description: "Building our love story" },
-    { src: loopImage, title: "Adventures", description: "Creating memories together" },
-    { src: loop1Image, title: "Happy Moments", description: "Sharing joy and laughter" },
-    { src: loop2Image, title: "Perfect Day", description: "Every moment with you" },
-    { src: loop3Image, title: "Love Story", description: "Writing our chapter" },
-    { src: loop4Image, title: "Forever Memories", description: "Moments to treasure" },
-    { src: loop5Image, title: "Together Always", description: "Our journey continues" }
+    { src: prenup1, title: "Our Beginning", description: "The moment it all started" },
+    { src: prenup2, title: "The Proposal", description: "She said yes!" },
+    { src: prenup3, title: "Growing Together", description: "Building our love story" },
+    { src: prenup4, title: "Adventures", description: "Creating memories together" },
+    { src: prenup5, title: "Happy Moments", description: "Sharing joy and laughter" },
+    { src: prenup6, title: "Perfect Day", description: "Every moment with you" },
+    { src: prenup7, title: "Love Story", description: "Writing our chapter" }
   ];
 
   const handleImageClick = (index: number) => {
