@@ -1,5 +1,6 @@
 import { Heart, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
+import OceanStickers from '@/components/OceanStickers';
 
 const Footer = () => {
   return (
@@ -9,6 +10,8 @@ const Footer = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 12.5 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="footer" density="medium" />
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Footer Content */}
         <motion.div 

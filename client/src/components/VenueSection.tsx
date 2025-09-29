@@ -4,6 +4,7 @@ import { MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
 import { LinkPreview } from '@/components/ui/link-preview';
+import OceanStickers from '@/components/OceanStickers';
 
 const VenueSection = () => {
   const { animationsEnabled } = useAnimationContext();
@@ -37,11 +38,13 @@ const VenueSection = () => {
   return (
     <motion.section 
       id="venue" 
-      className="section-hard-blue py-20 px-4"
+      className="section-hard-blue py-20 px-4 relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 6.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <motion.div 

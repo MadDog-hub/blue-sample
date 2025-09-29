@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import OceanStickers from '@/components/OceanStickers';
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -37,11 +38,13 @@ const CountdownSection = () => {
   return (
     <motion.section 
       id="countdown" 
-      className="section-pastel-blue pt-[10px] pb-20 px-4"
+      className="section-pastel-blue pt-[10px] pb-20 px-4 relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 2.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="medium" />
       <div className="max-w-4xl mx-auto text-center">
         {/* Section Header */}
         <motion.div 

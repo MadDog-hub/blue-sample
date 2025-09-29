@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import OceanStickers from '@/components/OceanStickers';
 
 // import semiformalImage from "@assets/39c08e20-9c26-49c2-94e3-894e60b153d4_1757834960927.png";
 const semiformalImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759163010/69d00dc0-1a94-41a9-878b-887842382fc1_hll0eh.png';
@@ -24,6 +25,8 @@ const DressCodeSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 7.5 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 border border-[#333333] rounded-full"></div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import OceanStickers from '@/components/OceanStickers';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

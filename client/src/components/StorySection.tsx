@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import OceanStickers from '@/components/OceanStickers';
 // Story images from new Cloudinary collection
 const storyImage1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/prenup1_uy0r6d.png';
 const storyImage2 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup2_ip3kvf.png';
@@ -146,11 +147,13 @@ const StorySection = () => {
   return (
     <motion.section 
       id="story" 
-      className="section-hard-blue relative"
+      className="section-hard-blue relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 3.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       {/* SVG Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="absolute top-0 left-0 w-full h-full opacity-5" viewBox="0 0 1200 800">
