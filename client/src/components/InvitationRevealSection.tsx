@@ -21,27 +21,27 @@ const InvitationRevealSection = () => {
     {
       id: 1,
       image: pirate1,
-      className: "absolute top-10 left-[15%] rotate-[-8deg]",
+      className: "relative",
     },
     {
       id: 2,
       image: pirate2,
-      className: "absolute top-32 left-[25%] rotate-[12deg]",
+      className: "relative",
     },
     {
       id: 3,
       image: pirate3,
-      className: "absolute top-8 left-[45%] rotate-[-5deg]",
+      className: "relative",
     },
     {
       id: 4,
       image: pirate4,
-      className: "absolute top-40 left-[55%] rotate-[8deg]",
+      className: "relative",
     },
     {
       id: 5,
       image: pirate5,
-      className: "absolute top-16 right-[15%] rotate-[-10deg]",
+      className: "relative",
     },
   ];
 
@@ -61,12 +61,12 @@ const InvitationRevealSection = () => {
     >
       {/* Instruction Text */}
       <motion.div 
-        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 w-full max-w-md"
         initial={animationsEnabled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={animationsEnabled ? { duration: 0.8, delay: 3.0 } : { duration: 0 }}
       >
-        <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 mx-auto">
           <p className="text-white text-sm md:text-base font-medium text-center" data-testid="text-drag-instruction">
             🏴‍☠️ Drag away the pirates to reveal your invitation
           </p>
@@ -76,7 +76,7 @@ const InvitationRevealSection = () => {
       <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
         {/* Hidden Invitation Message */}
         <motion.div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-2xl mx-auto px-4"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center max-w-2xl mx-auto px-4 w-full"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={allCardsRemoved ? { 
             opacity: 1, 
@@ -102,25 +102,28 @@ const InvitationRevealSection = () => {
           </div>
         </motion.div>
 
-        {/* Draggable Pirate Cards */}
-        {pirates.map((pirate) => {
-          if (removedCards.has(pirate.id)) return null;
-          
-          return (
-            <DraggableCardBody 
-              key={pirate.id}
-              className={pirate.className}
-              onDragEnd={() => handleCardRemoved(pirate.id)}
-            >
-              <img
-                src={pirate.image}
-                alt={`Pirate ${pirate.id}`}
-                className="pointer-events-none relative z-10 h-32 w-32 md:h-40 md:w-40 object-contain"
-                data-testid={`img-pirate-${pirate.id}`}
-              />
-            </DraggableCardBody>
-          );
-        })}
+        {/* Draggable Pirate Images */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-0 flex-wrap">
+          {pirates.map((pirate) => {
+            if (removedCards.has(pirate.id)) return null;
+            
+            return (
+              <DraggableCardBody 
+                key={pirate.id}
+                className={pirate.className}
+                onDragEnd={() => handleCardRemoved(pirate.id)}
+                noCard={true}
+              >
+                <img
+                  src={pirate.image}
+                  alt={`Pirate ${pirate.id}`}
+                  className="pointer-events-none relative z-10 h-24 w-24 md:h-32 md:w-32 object-contain"
+                  data-testid={`img-pirate-${pirate.id}`}
+                />
+              </DraggableCardBody>
+            );
+          })}
+        </div>
 
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">

@@ -6,6 +6,7 @@ interface DraggableCardBodyProps {
   className?: string;
   children: React.ReactNode;
   onDragEnd?: (info: PanInfo) => void;
+  noCard?: boolean;
 }
 
 interface DraggableCardContainerProps {
@@ -24,6 +25,7 @@ export const DraggableCardBody = ({
   className,
   children,
   onDragEnd,
+  noCard = false,
 }: DraggableCardBodyProps) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -69,9 +71,11 @@ export const DraggableCardBody = ({
       } : {}}
       data-testid={`draggable-card-${className?.includes('top-') ? 'positioned' : 'default'}`}
     >
-      <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl">
-        {children}
-      </div>
+      {noCard ? children : (
+        <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-xl">
+          {children}
+        </div>
+      )}
     </motion.div>
   );
 };
