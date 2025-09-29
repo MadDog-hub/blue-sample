@@ -128,7 +128,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
             data-testid="invitation-paper"
           >
             {/* Paper background */}
-            <div className="bg-white rounded-lg shadow-2xl p-6 max-w-md border border-gray-200 transform">
+            <div className="bg-white rounded-lg shadow-2xl p-6 max-w-2xl border border-gray-200 transform">
               {/* Paper content */}
               <motion.div
                 initial={animationsEnabled ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
                 }}
                 className="text-center"
               >
-                <h2 className="text-3xl md:text-4xl font-display italic text-gray-800 mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-display italic text-yellow-600 mb-4 leading-tight">
                   You're Invited!
                 </h2>
                 <p className="text-lg md:text-xl text-gray-700 font-script italic leading-relaxed">
