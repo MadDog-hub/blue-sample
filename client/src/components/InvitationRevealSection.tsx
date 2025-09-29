@@ -61,12 +61,12 @@ const InvitationRevealSection = () => {
     >
       {/* Instruction Text */}
       <motion.div 
-        className="absolute top-8 left-1/2 transform -translate-x-1/2 z-20 w-full max-w-md"
+        className="absolute top-8 left-0 right-0 z-20 flex justify-center"
         initial={animationsEnabled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={animationsEnabled ? { duration: 0.8, delay: 3.0 } : { duration: 0 }}
       >
-        <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 mx-auto">
+        <div className="bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
           <p className="text-white text-sm md:text-base font-medium text-center" data-testid="text-drag-instruction">
             🏴‍☠️ Drag away the pirates to reveal your invitation
           </p>
