@@ -1,7 +1,10 @@
+"use client";
 import { Button } from '@/components/ui/button';
 import { MapPin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import { LinkPreview } from '@/components/ui/link-preview';
+import OceanStickers from '@/components/OceanStickers';
 
 const VenueSection = () => {
   const { animationsEnabled } = useAnimationContext();
@@ -10,7 +13,7 @@ const VenueSection = () => {
       title: 'Ceremony',
       name: 'The Archdiocesan Shrine of the Most Sacred Heart of Jesus',
       address: 'Cebu City, Philippines',
-      image: 'https://res.cloudinary.com/dpzxdmqqg/image/upload/v1755332551/Sacred_Heart_of_Jesus_Parish_zx6fb0.jpg',
+      image: 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151636/ceremony_jiydvw.png',
       mapUrl: 'https://maps.app.goo.gl/FZX2vwdMSoH9J7VLA',
       description: 'We will exchange vows at the beautiful Archdiocesan Shrine of the Most Sacred Heart of Jesus.',
       details: 'Please arrive early to ensure you are seated before the ceremony begins.',
@@ -22,7 +25,7 @@ const VenueSection = () => {
       title: 'Reception',
       name: 'Summit Galleria Cebu',
       address: 'Cebu City, Philippines',
-      image: 'https://res.cloudinary.com/dpzxdmqqg/image/upload/v1755332552/Summit_Galleria_s1wqmg.jpg',
+      image: 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151636/reception_wgcsp9.png',
       mapUrl: 'https://maps.app.goo.gl/PmoM3L4xdNqv2p4m6',
       description: 'Please join us for dinner, cocktails and dancing!',
       details: 'After the ceremony, we will move to the reception venue for the celebration.',
@@ -35,11 +38,13 @@ const VenueSection = () => {
   return (
     <motion.section 
       id="venue" 
-      className="section-hard-blue py-20 px-4"
+      className="section-hard-blue py-20 px-4 relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 6.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <motion.div 
@@ -48,7 +53,7 @@ const VenueSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 6.8 } : { duration: 0 }}
         >
-          <h1 className="text-5xl font-display italic text-primary-foreground mb-8" data-testid="text-venue-section-title">
+          <h1 className="text-5xl font-display italic text-gold-bright mb-8" data-testid="text-venue-section-title">
             Venue
           </h1>
         </motion.div>
@@ -68,10 +73,10 @@ const VenueSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={animationsEnabled ? { duration: 0.6, ease: "easeOut", delay: 7.0 + (index * 0.4) } : { duration: 0 }}
               >
-                <h2 className="font-script italic text-primary-foreground mb-4 text-[35px]" data-testid={`text-${venue.title.toLowerCase()}-title`}>
+                <h2 className="font-script italic text-gold-bright mb-4 text-[35px]" data-testid={`text-${venue.title.toLowerCase()}-title`}>
                   {venue.title}
                 </h2>
-                <h3 className="font-body text-primary-foreground mb-4 text-lg" data-testid={`text-${venue.title.toLowerCase()}-name`}>
+                <h3 className="font-body text-gold-bright mb-4 text-lg" data-testid={`text-${venue.title.toLowerCase()}-name`}>
                   {venue.name}
                 </h3>
               </motion.div>
@@ -119,13 +124,13 @@ const VenueSection = () => {
                     </p>
                   </div>
                   <div className="text-right">
-                    <button
-                      className="location-guide-btn"
+                    <LinkPreview
+                      url={venue.mapUrl}
+                      className="location-guide-btn font-body text-primary-foreground/90 hover:text-primary-foreground transition-colors duration-200"
                       data-testid={`button-${venue.title.toLowerCase()}-location`}
-                      onClick={() => window.open(venue.mapUrl, '_blank')}
                     >
                       {venue.locationGuide}
-                    </button>
+                    </LinkPreview>
                   </div>
                 </div>
 
@@ -142,7 +147,7 @@ const VenueSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 8.4 } : { duration: 0 }}
         >
-          <h3 className="text-2xl font-display text-primary-foreground mb-4 font-medium">Unplugged Ceremony</h3>
+          <h3 className="text-2xl font-display text-gold-bright mb-4 font-medium">Unplugged Ceremony</h3>
           <p className="text-base font-body text-primary-foreground/90 leading-relaxed mb-4">
             We kindly ask that the ceremony be camera-free so everyone can be fully present in the moment. Once we move to the reception venue, please feel free to take as many photos and videos as you like—we'd love for you to help us capture more memories!
           </p>

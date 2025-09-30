@@ -3,11 +3,13 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
-import firstImage from '@assets/first_1757830927000.png';
-import proposalImage from '@assets/proposal_1757830927001.png';
-import midImage from '@assets/mid_1757830927001.png';
-import loopImage from '@assets/loop_1757830927002.png';
-import loop1Image from '@assets/loop1_1757830927003.png';
+import OceanStickers from '@/components/OceanStickers';
+// Story images from new Cloudinary collection
+const storyImage1 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/prenup1_uy0r6d.png';
+const storyImage2 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup2_ip3kvf.png';
+const storyImage3 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop1_o4jrga.png';
+const storyImage4 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151638/imageloop3_oujpxp.png';
+const storyImage5 = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151635/prenup4_qg5qgx.png';
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -23,31 +25,31 @@ const StorySection = () => {
       id: 1,
       title: "First Meeting",
       text: "Two hearts found each other in the most unexpected way. From strangers to friends, we discovered something special.",
-      image: firstImage
+      image: storyImage1
     },
     {
       id: 2, 
       title: "Growing Together",
       text: "We learned that love isn't just about the big moments—it's in the daily laughter, shared dreams, and quiet support.",
-      image: proposalImage
+      image: storyImage2
     },
     {
       id: 3,
       title: "Adventures & Challenges", 
       text: "Through every adventure and challenge, we've grown stronger. Running side by side through life's journey.",
-      image: midImage
+      image: storyImage3
     },
     {
       id: 4,
       title: "The Decision",
       text: "We knew we wanted to spend forever together. This isn't just our wedding day—it's the beginning of our greatest adventure.",
-      image: loopImage
+      image: storyImage4
     },
     {
       id: 5,
       title: "Our Future",
       text: "Today we celebrate not just our love, but all the beautiful tomorrows waiting for us. Hand in hand, heart to heart.",
-      image: loop1Image
+      image: storyImage5
     }
   ];
 
@@ -145,23 +147,15 @@ const StorySection = () => {
   return (
     <motion.section 
       id="story" 
-      className="section-hard-blue relative"
+      className="section-hard-blue relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 3.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       {/* SVG Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute top-0 left-0 w-full h-full opacity-5" viewBox="0 0 1200 800">
-          <defs>
-            <pattern id="heartPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M50,25 C50,15 35,5 25,15 C15,5 5,15 5,25 C5,35 25,55 50,75 C75,55 95,35 95,25 C95,15 85,5 75,15 C65,5 50,15 50,25 Z" 
-                    fill="currentColor" className="text-primary-foreground/20"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#heartPattern)" />
-        </svg>
-        
         {/* Floating SVG Elements */}
         <svg className="absolute top-20 right-20 w-24 h-24 text-primary-foreground/30 animate-pulse" viewBox="0 0 24 24">
           <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
@@ -171,7 +165,6 @@ const StorySection = () => {
           <path fill="currentColor" d="M9,11H15L13,13L15,15H9L11,13L9,11M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
         </svg>
       </div>
-
       {/* Header */}
       <div className="text-center py-16 sm:py-20 px-4 relative z-10">
         <motion.div
@@ -179,7 +172,7 @@ const StorySection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 3.8 } : { duration: 0 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-script italic font-black text-primary-foreground mb-6 sm:mb-8" data-testid="text-story-title">
+          <h2 className="text-4xl sm:text-5xl font-script italic font-black text-gold-bright mb-6 sm:mb-8" data-testid="text-story-title">
             Our Story
           </h2>
           <p className="text-base sm:text-lg text-primary-foreground max-w-2xl mx-auto mb-4">
@@ -198,7 +191,6 @@ const StorySection = () => {
           </div>
         </motion.div>
       </div>
-
       {/* Horizontal Scrolling Container */}
       <div 
         ref={containerRef} 
@@ -230,10 +222,10 @@ const StorySection = () => {
                 {/* Content */}
                 <div className={`space-y-6 sm:space-y-8 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary-foreground rounded-full mb-4 sm:mb-6">
-                    <span className="text-primary font-bold text-lg sm:text-xl md:text-2xl">{card.id}</span>
+                    <span className="font-bold text-lg sm:text-xl md:text-2xl text-[#ffcb1f]">{card.id}</span>
                   </div>
                   
-                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic text-primary-foreground mb-4 sm:mb-6" data-testid={`text-story-card-${card.id}-title`}>
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic text-gold-bright mb-4 sm:mb-6" data-testid={`text-story-card-${card.id}-title`}>
                     {card.title}
                   </h3>
                   
@@ -303,7 +295,7 @@ const StorySection = () => {
               </svg>
 
               <div className="relative z-10 space-y-6 sm:space-y-8">
-                <h3 className="text-4xl sm:text-5xl md:text-6xl font-script italic font-black text-primary-foreground mb-6 sm:mb-8" data-testid="text-story-vow-title">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl font-script italic font-black text-gold-bright mb-6 sm:mb-8" data-testid="text-story-vow-title">
                   The Vow
                 </h3>
                 

@@ -26,7 +26,7 @@ const RSVPSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 10.8 } : { duration: 0 }}
         >
-          <h2 className="text-5xl font-script italic font-black text-primary mb-8" data-testid="text-rsvp-title">
+          <h2 className="text-5xl font-script italic font-black text-gold mb-8" data-testid="text-rsvp-title">
             Please RSVP
           </h2>
         </motion.div>
@@ -44,16 +44,16 @@ const RSVPSection = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Calendar className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-display font-semibold text-primary mb-2">RSVP Deadline</h3>
+              <h3 className="text-xl font-display font-semibold text-gold mb-2">RSVP Deadline</h3>
               <p className="text-lg text-muted-foreground">August 20, 2025</p>
             </div>
 
             {/* RSVP Message */}
             <div className="space-y-6 mb-8">
-              <p className="text-xl font-script italic text-primary leading-relaxed" data-testid="text-rsvp-message">
+              <p className="text-xl font-script italic leading-relaxed text-[#041b49]" data-testid="text-rsvp-message">
                 Your presence would make our day complete
               </p>
-              <p className="text-xl font-script italic text-primary leading-relaxed" data-testid="text-rsvp-details">
+              <p className="text-xl font-script italic text-[#041b49] leading-relaxed" data-testid="text-rsvp-details">
                 Please confirm your attendance by clicking the button below. 
                 We're excited to celebrate this special moment with you!
               </p>
@@ -93,7 +93,7 @@ const RSVPSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 11.4 } : { duration: 0 }}
         >
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-[#041b49]">
             Can't wait to celebrate with you! If you have any questions or special dietary requirements, please let us know when you RSVP.
           </p>
         </motion.div>

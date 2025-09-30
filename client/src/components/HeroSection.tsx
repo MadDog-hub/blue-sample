@@ -1,6 +1,6 @@
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
-import loop3Image from '@assets/loop3_1757833580249.png';
+const heroImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759151637/hero-cover_tfuqru.png';
 import { useAnimationContext } from '@/contexts/AnimationContext';
 
 const HeroSection = () => {
@@ -11,7 +11,7 @@ const HeroSection = () => {
     <section 
       className="hero-section relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(${loop3Image})`,
+        backgroundImage: `url(${heroImage})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

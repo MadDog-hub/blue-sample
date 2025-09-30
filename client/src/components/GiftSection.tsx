@@ -23,7 +23,7 @@ const GiftSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 9.8 }}
         >
-          <h2 className="text-5xl font-display italic text-primary-foreground mb-8" data-testid="text-gifts-title">
+          <h2 className="text-5xl font-display italic text-gold-bright mb-8" data-testid="text-gifts-title">
             Wedding Gifts
           </h2>
         </motion.div>
@@ -67,7 +67,7 @@ const GiftSection = () => {
           {/* GCash Payment */}
           <div>
             <div className="bg-card/30 border border-border rounded-xl p-8 shadow-soft hover-elegant">
-              <h3 className="text-lg font-display font-semibold text-primary-foreground mb-4 text-center">GCash</h3>
+              <h3 className="text-lg font-display font-semibold text-gold-bright mb-4 text-center">GCash</h3>
               <div className="text-center mb-4">
                 <img 
                   src="https://res.cloudinary.com/dpzxdmqqg/image/upload/v1755332552/532087756_3192844410882952_149850844084049446_n_v5dj7e.jpg"

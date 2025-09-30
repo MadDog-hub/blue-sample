@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useAnimationContext } from '@/contexts/AnimationContext';
+import OceanStickers from '@/components/OceanStickers';
 
 const CountdownSection = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -37,11 +38,13 @@ const CountdownSection = () => {
   return (
     <motion.section 
       id="countdown" 
-      className="section-pastel-blue pt-[10px] pb-20 px-4"
+      className="section-pastel-blue pt-[10px] pb-20 px-4 relative overflow-hidden"
       initial={animationsEnabled ? { opacity: 0 } : { opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={animationsEnabled ? { duration: 1, delay: 2.5 } : { duration: 0 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="medium" />
       <div className="max-w-4xl mx-auto text-center">
         {/* Section Header */}
         <motion.div 
@@ -50,7 +53,7 @@ const CountdownSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 0.3 } : { duration: 0 }}
         >
-          <h2 className="text-5xl font-display italic text-primary mb-8" data-testid="text-countdown-title">
+          <h2 className="text-5xl font-display italic text-gold mb-8" data-testid="text-countdown-title">
             Forever starts soon
           </h2>
         </motion.div>
@@ -59,7 +62,7 @@ const CountdownSection = () => {
 
         {/* Countdown Timer Grid */}
         <motion.div 
-          className="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto"
+          className="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto text-[#be7c09]"
           initial={animationsEnabled ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={animationsEnabled ? { duration: 0.8, ease: "easeOut", delay: 0.6 } : { duration: 0 }}
@@ -83,7 +86,7 @@ const CountdownSection = () => {
               data-testid={`countdown-${item.label.toLowerCase()}`}
             >
               <motion.div 
-                className="text-4xl md:text-5xl font-display font-bold text-primary mb-2"
+                className="text-4xl md:text-5xl font-display font-bold mb-2 text-[#be7c09]"
                 key={item.value}
                 initial={animationsEnabled ? { opacity: 0.7, scale: 0.9 } : { opacity: 1, scale: 1 }}
                 animate={{ opacity: 1, scale: 1 }}

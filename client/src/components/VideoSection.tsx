@@ -56,7 +56,7 @@ const VideoSection = () => {
     >
       {/* Section Header */}
       <div className="text-center py-8 px-4">
-        <h2 className="text-5xl font-script italic font-black text-primary mb-8" data-testid="text-video-title">
+        <h2 className="text-5xl font-script italic font-black text-gold mb-8" data-testid="text-video-title">
           Save the Date Video
         </h2>
       </div>

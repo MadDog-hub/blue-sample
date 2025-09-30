@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
+import OceanStickers from '@/components/OceanStickers';
 
-import semiformalImage from "@assets/39c08e20-9c26-49c2-94e3-894e60b153d4_1757834960927.png";
+// import semiformalImage from "@assets/39c08e20-9c26-49c2-94e3-894e60b153d4_1757834960927.png";
+const semiformalImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759163010/69d00dc0-1a94-41a9-878b-887842382fc1_hll0eh.png';
 
-import formalImage from "@assets/4193ce13-9e83-49e8-9beb-45be60110fd7_1757834960927.png";
+// import formalImage from "@assets/4193ce13-9e83-49e8-9beb-45be60110fd7_1757834960927.png";
+const formalImage = 'https://res.cloudinary.com/dbciwaal4/image/upload/v1759163009/46d1d577-35fa-435f-84fd-304fe01cdaaf_itglfq.png';
 
 const DressCodeSection = () => {
   const dressCodeColors = [
@@ -22,6 +25,8 @@ const DressCodeSection = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 7.5 }}
     >
+      {/* Ocean Stickers */}
+      <OceanStickers variant="section" density="light" />
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 left-1/4 w-64 h-64 border border-[#333333] rounded-full"></div>
@@ -41,7 +46,7 @@ const DressCodeSection = () => {
           <div className="absolute bottom-0 left-1/3 w-6 h-6 border border-[#333333]/40 rounded-full"></div>
           <div className="absolute bottom-2 right-1/3 w-3 h-3 bg-[#333333]/30 rounded-full"></div>
 
-          <h2 className="font-display italic text-primary mb-8 text-[48px]" data-testid="text-dresscode-title">
+          <h2 className="font-display italic text-gold mb-8 text-[48px]" data-testid="text-dresscode-title">
             Attire Guide
           </h2>
           <div className="bg-[#333333]/10 border border-[#333333]/20 rounded-xl p-4 max-w-lg mx-auto relative">
