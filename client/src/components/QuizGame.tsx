@@ -35,32 +35,32 @@ const QuizGame = ({ onComplete, animationsEnabled }: QuizGameProps) => {
     },
     {
       id: 2,
-      question: "Who initiated getting to know each other better?",
-      options: ["The Bride", "The Groom", "Both at the same time", "Their friends"],
+      question: "Who said 'I love you' first?",
+      options: ["The Bride", "The Groom", "It was mutual", "Still debating!"],
       correctAnswer: 1,
       correctReaction: "✨ Amazing! You know the story well!",
       incorrectReaction: "💫 Not quite, but good guess!"
     },
     {
       id: 3,
-      question: "Who said 'I love you' first?",
-      options: ["The Bride", "The Groom", "They said it together", "Still waiting"],
-      correctAnswer: 1,
+      question: "Who's more likely to start a fight over food?",
+      options: ["The Bride", "The Groom", "Both equally", "Depends on the meal"],
+      correctAnswer: 0,
       correctReaction: "💕 Perfect! You're really paying attention!",
       incorrectReaction: "💭 Ooh, so close but not quite!"
     },
     {
       id: 4,
-      question: "Who planned the first date?",
-      options: ["The Bride", "The Groom", "They planned together", "It was spontaneous"],
-      correctAnswer: 1,
+      question: "Who planned more of the wedding?",
+      options: ["The Bride", "The Groom", "Split 50/50", "The internet"],
+      correctAnswer: 0,
       correctReaction: "🌟 Excellent! You've got this down!",
       incorrectReaction: "🎪 Good thinking, but that's not it!"
     },
     {
       id: 5,
-      question: "Who's more likely to plan surprises?",
-      options: ["The Bride", "The Groom", "Both equally", "Neither"],
+      question: "Who's the better cook?",
+      options: ["The Bride", "The Groom", "We survive on takeout", "Still figuring it out"],
       correctAnswer: 1,
       correctReaction: "🎉 Brilliant! You really know them!",
       incorrectReaction: "🎈 Almost there, but not quite!"
