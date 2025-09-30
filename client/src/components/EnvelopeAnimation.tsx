@@ -40,8 +40,8 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
       >
         {/* Envelope SVG */}
         <svg 
-          width="200" 
-          height="140" 
+          width="250" 
+          height="80" 
           viewBox="0 0 120 80" 
           className="drop-shadow-xl"
           data-testid="envelope-svg"
@@ -109,7 +109,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
               rotateX: 0 
             }}
             animate={{ 
-              y: -120, 
+              y: -60, 
               opacity: 1, 
               scale: 1,
               rotateX: 0,
@@ -128,7 +128,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
             data-testid="invitation-paper"
           >
             {/* Paper background */}
-            <div className="bg-white rounded-lg shadow-2xl p-8 w-full max-w-6xl mx-auto border border-gray-200 transform">
+            <div className="bg-white rounded-lg shadow-2xl p-6 w-full max-w-6xl mx-auto border border-gray-200 transform">
               {/* Paper content */}
               <motion.div
                 initial={animationsEnabled ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
@@ -142,10 +142,10 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
                 }}
                 className="text-center"
               >
-                <h2 className="text-4xl md:text-5xl font-display italic text-yellow-600 mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-display italic text-yellow-600 mb-4 leading-tight">
                   You're Invited!
                 </h2>
-                <p className="text-xl md:text-2xl text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
+                <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
                   Join us as we embark on our greatest adventure together - 
                   a celebration of love, laughter, and happily ever after
                 </p>
