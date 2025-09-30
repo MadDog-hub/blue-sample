@@ -146,8 +146,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled }: EnvelopeAnimationPr
                   You're Invited!
                 </h2>
                 <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
-                  Join us as we embark on our greatest adventure together - 
-                  a celebration of love, laughter, and happily ever after
+                  Come witness the moment we tie the knot and start our greatest adventure together — with love, laughter, and a lifetime of memories.
                 </p>
                 
                 {/* Decorative elements */}
