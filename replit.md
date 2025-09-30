@@ -117,13 +117,19 @@ Successfully migrated from Lovable to Replit environment:
     - Responsive padding and spacing (p-6 md:p-8, mb-6 md:mb-8)
     - Mobile-first design ensuring readability on all device sizes
 - **2025-09-30**: Added interactive quiz game for invitation reveal:
-  - Created QuizGame component with 5 relationship questions about the couple
-  - Questions include: who made first move, who initiated getting to know each other, who said "I love you" first, who planned first date, and who plans surprises
+  - Replaced pirate clicking mechanism with "Open Invitation" button
+  - Created QuizGame component with 5 relationship questions:
+    1. Who made the first move? (Answer: The Groom)
+    2. Who said "I love you" first? (Answer: The Groom)
+    3. Who's more likely to start a fight over food? (Answer: The Bride)
+    4. Who planned more of the wedding? (Answer: The Bride)
+    5. Who's the better cook? (Answer: The Groom)
   - Real-time reaction feedback after each answer with animated emojis and messages
   - Score tracking system (0-5 points)
-  - Modified InvitationRevealSection to show quiz after all pirates are clicked
+  - Centered quiz layout for better desktop/mobile experience
   - Updated EnvelopeAnimation with two invitation designs:
     - Premium design (4-5 correct): Golden gradient border, animated sparkles, VIP message, rotating decorative elements
     - Standard design (0-3 correct): Clean white paper with simple decorations
   - Shows "Perfect Score!" message only for 5/5, "Amazing Score!" with actual score for 4/5
   - Implemented functional state updates for reliable score tracking
+  - Adjusted invitation paper dimensions: wider (max-w-5xl) and shorter (reduced padding and spacing)
