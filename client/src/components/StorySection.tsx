@@ -156,16 +156,6 @@ const StorySection = () => {
       <OceanStickers variant="section" density="light" />
       {/* SVG Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg className="absolute top-0 left-0 w-full h-full opacity-5" viewBox="0 0 1200 800">
-          <defs>
-            <pattern id="heartPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M50,25 C50,15 35,5 25,15 C15,5 5,15 5,25 C5,35 25,55 50,75 C75,55 95,35 95,25 C95,15 85,5 75,15 C65,5 50,15 50,25 Z" 
-                    fill="currentColor" className="text-primary-foreground/20"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#heartPattern)" />
-        </svg>
-        
         {/* Floating SVG Elements */}
         <svg className="absolute top-20 right-20 w-24 h-24 text-primary-foreground/30 animate-pulse" viewBox="0 0 24 24">
           <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5 C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.04L12,21.35Z"/>
