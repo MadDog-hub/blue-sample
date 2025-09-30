@@ -130,11 +130,11 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled, score = 0 }: Envelope
             data-testid="invitation-paper"
           >
             {/* Paper background */}
-            <div className={`rounded-lg shadow-2xl p-6 md:p-8 w-full max-w-5xl mx-auto transform ${
+            <div className={`rounded-lg shadow-2xl p-4 md:p-6 w-full max-w-6xl mx-auto transform ${
               isPremium 
                 ? 'bg-gradient-to-br from-amber-50 via-white to-amber-50 border-4 border-amber-400' 
                 : 'bg-white border border-gray-200'
-            }`}>
+            }`} style={{ maxHeight: '80vh', overflowY: 'auto' }}>
               {/* Paper content */}
               <motion.div
                 initial={animationsEnabled ? { opacity: 0, y: 10 } : { opacity: 1, y: 0 }}
@@ -164,22 +164,22 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled, score = 0 }: Envelope
                       } : {}}
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
                     >
-                      <h2 className="text-3xl md:text-4xl font-display italic bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 bg-clip-text text-transparent mb-3 leading-tight">
+                      <h2 className="text-2xl md:text-3xl font-display italic bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 bg-clip-text text-transparent mb-2 leading-tight">
                         You Know Us So Well!
                       </h2>
                     </motion.div>
                     
                     <div className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 h-1 w-24 mx-auto rounded-full mb-3"></div>
                     
-                    <p className="text-base md:text-lg text-gray-700 italic leading-relaxed mb-4" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
+                    <p className="text-sm md:text-base text-gray-700 italic leading-relaxed mb-3" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
                       Come witness the moment we tie the knot and start our greatest adventure together — with love, laughter, and a lifetime of memories.
                     </p>
                     
-                    <div className="bg-amber-100 rounded-lg p-4 border-2 border-amber-300 shadow-lg inline-block">
-                      <p className="text-lg md:text-xl font-bold text-amber-800 mb-1">
+                    <div className="bg-amber-100 rounded-lg p-3 border-2 border-amber-300 shadow-lg inline-block">
+                      <p className="text-base md:text-lg font-bold text-amber-800 mb-1">
                         {score === 5 ? '🏆 Perfect Score!' : '⭐ Amazing Score!'}
                       </p>
-                      <p className="text-sm md:text-base text-amber-700">
+                      <p className="text-xs md:text-sm text-amber-700">
                         {score === 5 
                           ? "Your knowledge of our love story is incredible! We're touched by how well you know us." 
                           : `You got ${score}/5 correct! You really know us well!`}
@@ -200,10 +200,10 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled, score = 0 }: Envelope
                 ) : (
                   <>
                     {/* Normal Design - 0-3 Score */}
-                    <h2 className="text-3xl md:text-4xl font-display italic text-yellow-600 mb-3 leading-tight">
+                    <h2 className="text-2xl md:text-3xl font-display italic text-yellow-600 mb-2 leading-tight">
                       You're Invited!
                     </h2>
-                    <p className="text-base md:text-lg text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
+                    <p className="text-sm md:text-base text-gray-700 italic leading-relaxed" style={{ fontFamily: 'Times, "Times New Roman", serif' }}>
                       Come witness the moment we tie the knot and start our greatest adventure together — with love, laughter, and a lifetime of memories.
                     </p>
                     
