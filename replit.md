@@ -16,6 +16,8 @@ This is a wedding invitation website for Andrei & Sam's wedding on September 7, 
 - Responsive wedding invitation website
 - Interactive hero section with invitation opening animation
 - Background music that starts on user interaction
+- Interactive quiz game for invitation reveal (click pirates to start)
+- Score-based invitation designs (premium for 4-5 correct, standard for 0-3 correct)
 - Multiple content sections (story, venue, RSVP, FAQ, etc.)
 - Modern UI components using shadcn/ui
 - Dark/light theme support
@@ -114,3 +116,14 @@ Successfully migrated from Lovable to Replit environment:
     - Adaptive text sizes (text-base md:text-lg, text-xl md:text-2xl)
     - Responsive padding and spacing (p-6 md:p-8, mb-6 md:mb-8)
     - Mobile-first design ensuring readability on all device sizes
+- **2025-09-30**: Added interactive quiz game for invitation reveal:
+  - Created QuizGame component with 5 relationship questions about the couple
+  - Questions include: who made first move, who initiated getting to know each other, who said "I love you" first, who planned first date, and who plans surprises
+  - Real-time reaction feedback after each answer with animated emojis and messages
+  - Score tracking system (0-5 points)
+  - Modified InvitationRevealSection to show quiz after all pirates are clicked
+  - Updated EnvelopeAnimation with two invitation designs:
+    - Premium design (4-5 correct): Golden gradient border, animated sparkles, VIP message, rotating decorative elements
+    - Standard design (0-3 correct): Clean white paper with simple decorations
+  - Shows "Perfect Score!" message only for 5/5, "Amazing Score!" with actual score for 4/5
+  - Implemented functional state updates for reliable score tracking
