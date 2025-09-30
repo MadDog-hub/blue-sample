@@ -165,7 +165,7 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled, score = 0 }: Envelope
                       transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
                     >
                       <h2 className="text-3xl md:text-4xl font-display italic bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 bg-clip-text text-transparent mb-3 leading-tight">
-                        You're Our VIP Guest!
+                        You Know Us So Well!
                       </h2>
                     </motion.div>
                     
@@ -181,8 +181,8 @@ const EnvelopeAnimation = ({ isVisible, animationsEnabled, score = 0 }: Envelope
                       </p>
                       <p className="text-sm md:text-base text-amber-700">
                         {score === 5 
-                          ? "You've earned the most spectacular invitation!" 
-                          : `You got ${score}/5 correct! You really know them well!`}
+                          ? "Your knowledge of our love story is incredible! We're touched by how well you know us." 
+                          : `You got ${score}/5 correct! You really know us well!`}
                       </p>
                     </div>
                     

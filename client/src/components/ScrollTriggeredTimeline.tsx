@@ -12,6 +12,158 @@ interface TimelineEvent {
     hueB: number;
 }
 
+interface TimelineCardProps {
+    timelineEvent: TimelineEvent;
+    i: number;
+}
+
+const TimelineCard: React.FC<TimelineCardProps> = ({ timelineEvent, i }) => {
+    const IconComponent = timelineEvent.icon;
+    const accentColor = `hsl(${timelineEvent.hueA}, 80%, 60%)`;
+
+    const getEventDescription = (eventName: string): string => {
+        const descriptions: Record<string, string> = {
+            "Guest Arrival & Processional": "Join us as we gather to celebrate our special day. Light refreshments will be served.",
+            "Sacred Wedding Ceremony": "Witness our vows and the beginning of our journey together as we exchange rings and promises.",
+            "Cocktails & Photography": "Enjoy signature drinks and appetizers while we capture beautiful moments with our loved ones.",
+            "Dinner & Heartfelt Toasts": "A delicious meal followed by touching speeches from our closest family and friends.",
+            "Dancing Under the Stars": "Let's celebrate with music and dancing as we create unforgettable memories together."
+        };
+        return descriptions[eventName] || "Join us for this special moment in our lives.";
+    };
+
+    return (
+        <motion.div
+            className={`relative pl-12 py-6 group`}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ amount: 0.3, once: true }}
+            data-testid={`timeline-card-${i}`}
+        >
+            {/* Timeline dot */}
+            <div className="absolute left-0 top-8 w-6 h-6 rounded-full flex items-center justify-center z-10"
+                style={{
+                    background: `linear-gradient(135deg, ${hue(timelineEvent.hueA, 90, 90)}, ${hue(timelineEvent.hueB, 80, 60)})`,
+                    boxShadow: '0 0 0 4px rgba(255, 255, 255, 0.8)'
+                }}
+            >
+                <div className="w-2 h-2 bg-white rounded-full"></div>
+            </div>
+
+            {/* Timeline line */}
+            <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+            
+            {/* Card */}
+            <motion.div 
+                className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+                variants={cardVariants}
+                whileHover={{ y: -5 }}
+            >
+                <div className="p-6">
+                    <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                            <div className="w-12 h-12 rounded-full flex items-center justify-center" 
+                                style={{
+                                    background: `linear-gradient(135deg, ${hue(timelineEvent.hueA, 90, 90)}, ${hue(timelineEvent.hueB, 80, 60)})`,
+                                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                                }}
+                            >
+                                <IconComponent className="w-5 h-5 text-white" />
+                            </div>
+                        </div>
+                        
+                        <div className="flex-1">
+                            <div className="text-sm font-medium text-amber-600 mb-1">
+                                {timelineEvent.time}
+                            </div>
+                            <h3 className="text-lg font-serif font-medium text-gray-800 mb-2">
+                                {timelineEvent.event}
+                            </h3>
+                            <div className="w-10 h-0.5 bg-amber-100 my-3"></div>
+                            <p className="text-sm text-gray-600">
+                                {getEventDescription(timelineEvent.event)}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+const cardVariants: Variants = {
+    offscreen: {
+        x: -30,
+        opacity: 0,
+    },
+    onscreen: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 15,
+            duration: 0.5,
+            delay: 0.1
+        },
+    },
+};
+
+const hue = (h: number, s: number = 100, l: number = 50): string => `hsl(${h}, ${s}%, ${l}%)`;
+
+/**
+ * ==============   Styles   ================
+ */
+
+const container: React.CSSProperties = {
+    position: 'relative',
+    maxWidth: '600px',
+    margin: '0 auto',
+    padding: '40px 20px',
+};
+
+/**
+ * ==============   Data   ================
+ */
+
+const timelineEvents: TimelineEvent[] = [
+    {
+        time: "1:00 PM",
+        event: "Guest Arrival & Processional",
+        icon: Clock,
+        hueA: 35, // Gold
+        hueB: 45, // Orange
+    },
+    {
+        time: "1:30 PM", 
+        event: "Sacred Wedding Ceremony",
+        icon: Heart,
+        hueA: 0,   // Red
+        hueB: 340, // Pink
+    },
+    {
+        time: "3:00 PM",
+        event: "Cocktails & Photography", 
+        icon: Camera,
+        hueA: 210, // Light Blue
+        hueB: 240, // Blue
+    },
+    {
+        time: "5:00 PM",
+        event: "Dinner & Heartfelt Toasts",
+        icon: Utensils,
+        hueA: 160, // Teal
+        hueB: 190, // Green
+    },
+    {
+        time: "8:00 PM",
+        event: "Dancing Under the Stars",
+        icon: Music,
+        hueA: 270, // Purple
+        hueB: 300, // Pink
+    },
+];
+
 export default function ScrollTriggeredTimeline() {
     const { animationsEnabled } = useAnimationContext();
 
@@ -44,7 +196,7 @@ export default function ScrollTriggeredTimeline() {
             </div>
 
             {/* Header Section */}
-            <div className="relative z-10 text-center mb-16">
+            <div className="relative z-10 text-center mb-12">
                 <motion.div 
                     className="text-center max-w-4xl mx-auto px-4"
                     initial={{ opacity: 0, y: 30 }}
@@ -52,9 +204,12 @@ export default function ScrollTriggeredTimeline() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h2 className="text-5xl font-display italic text-gold mb-8" data-testid="text-timeline-title">
-                        Wedding Timeline
+                    <h2 className="text-4xl md:text-5xl font-serif italic text-amber-700 mb-4" data-testid="text-timeline-title">
+                        Our Wedding Day
                     </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        Join us as we celebrate our love story. Here's what to expect on our special day.
+                    </p>
                 </motion.div>
             </div>
 
@@ -85,168 +240,3 @@ export default function ScrollTriggeredTimeline() {
         </motion.section>
     );
 }
-
-interface TimelineCardProps {
-    timelineEvent: TimelineEvent;
-    hueA?: number;
-    hueB?: number;
-    i: number;
-}
-
-function TimelineCard({ timelineEvent, i }: TimelineCardProps) {
-    const background = `linear-gradient(306deg, ${hue(timelineEvent.hueA)}, ${hue(timelineEvent.hueB)})`;
-    const IconComponent = timelineEvent.icon;
-
-    return (
-        <motion.div
-            className={`card-container-${i}`}
-            style={cardContainer}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.8 }}
-            data-testid={`timeline-card-${i}`}
-        >
-            <div style={{ ...splash, background }} />
-            <motion.div style={card} variants={cardVariants} className="card">
-                {/* Elegant overlay pattern */}
-                <div className="absolute inset-0 opacity-5" style={{
-                    background: 'radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2), transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15), transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.1), transparent 50%)'
-                }}></div>
-                
-                <div className="flex flex-col items-center justify-center h-full text-center px-6 relative z-10">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 relative" style={{
-                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)',
-                        boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3)',
-                        border: '1px solid rgba(255, 255, 255, 0.3)'
-                    }}>
-                        <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
-                    </div>
-                    
-                    <div className="text-4xl font-display font-bold text-white mb-3 drop-shadow-lg" style={{
-                        background: 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text'
-                    }}>
-                        {timelineEvent.time}
-                    </div>
-                    
-                    <div className="text-xl font-body text-white/95 leading-relaxed drop-shadow-sm">
-                        {timelineEvent.event}
-                    </div>
-                    
-                    {/* Elegant bottom accent */}
-                    <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-16 h-px" style={{
-                        background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)'
-                    }}></div>
-                </div>
-            </motion.div>
-        </motion.div>
-    );
-}
-
-const cardVariants: Variants = {
-    offscreen: {
-        y: 300,
-    },
-    onscreen: {
-        y: 50,
-        rotate: -10,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8,
-        },
-    },
-};
-
-const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
-
-/**
- * ==============   Styles   ================
- */
-
-const container: React.CSSProperties = {
-    margin: "100px auto",
-    maxWidth: 500,
-    paddingBottom: 100,
-    width: "100%",
-};
-
-const cardContainer: React.CSSProperties = {
-    overflow: "hidden",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    paddingTop: 20,
-    marginBottom: -120,
-};
-
-const splash: React.CSSProperties = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-};
-
-const card: React.CSSProperties = {
-    width: 300,
-    height: 430,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 24,
-    background: "linear-gradient(135deg, rgba(23, 22, 16, 0.95) 0%, rgba(51, 51, 51, 0.85) 50%, rgba(23, 22, 16, 0.95) 100%)",
-    backdropFilter: "blur(20px)",
-    boxShadow:
-        "0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.2)",
-    transformOrigin: "10% 60%",
-    border: "1px solid rgba(255, 255, 255, 0.2)",
-    position: "relative",
-    overflow: "hidden",
-};
-
-/**
- * ==============   Data   ================
- */
-
-const timelineEvents: TimelineEvent[] = [
-    {
-        time: "1:00 PM",
-        event: "Guest Arrival & Processional",
-        icon: Clock,
-        hueA: 340,
-        hueB: 10,
-    },
-    {
-        time: "1:30 PM", 
-        event: "Sacred Wedding Ceremony",
-        icon: Heart,
-        hueA: 20,
-        hueB: 40,
-    },
-    {
-        time: "3:00 PM",
-        event: "Cocktails & Photography", 
-        icon: Camera,
-        hueA: 60,
-        hueB: 90,
-    },
-    {
-        time: "5:00 PM",
-        event: "Dinner & Heartfelt Toasts",
-        icon: Utensils,
-        hueA: 100,
-        hueB: 140,
-    },
-    {
-        time: "8:00 PM",
-        event: "Dancing Under the Stars",
-        icon: Music,
-        hueA: 260,
-        hueB: 290,
-    },
-];
