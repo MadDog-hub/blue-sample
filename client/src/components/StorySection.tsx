@@ -175,7 +175,6 @@ const StorySection = () => {
           <path fill="currentColor" d="M9,11H15L13,13L15,15H9L11,13L9,11M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
         </svg>
       </div>
-
       {/* Header */}
       <div className="text-center py-16 sm:py-20 px-4 relative z-10">
         <motion.div
@@ -202,7 +201,6 @@ const StorySection = () => {
           </div>
         </motion.div>
       </div>
-
       {/* Horizontal Scrolling Container */}
       <div 
         ref={containerRef} 
@@ -234,7 +232,7 @@ const StorySection = () => {
                 {/* Content */}
                 <div className={`space-y-6 sm:space-y-8 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-primary-foreground rounded-full mb-4 sm:mb-6">
-                    <span className="text-primary font-bold text-lg sm:text-xl md:text-2xl">{card.id}</span>
+                    <span className="font-bold text-lg sm:text-xl md:text-2xl text-[#ffcb1f]">{card.id}</span>
                   </div>
                   
                   <h3 className="text-3xl sm:text-4xl lg:text-5xl font-script italic text-gold-bright mb-4 sm:mb-6" data-testid={`text-story-card-${card.id}-title`}>
