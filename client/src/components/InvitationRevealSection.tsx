@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/draggable-card";
 import { useAnimationContext } from '@/contexts/AnimationContext';
 import EnvelopeAnimation from './EnvelopeAnimation';
+import QuizGame from './QuizGame';
 
 // Pirate images
 import pirate1 from "@assets/image-removebg-preview_1759155973200.png";
@@ -17,6 +18,9 @@ import pirate5 from "@assets/1f0bcba1-aa26-4aa2-867f-f86795755d62-removebg-previ
 const InvitationRevealSection = () => {
   const { animationsEnabled } = useAnimationContext();
   const [removedCards, setRemovedCards] = useState<Set<number>>(new Set());
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
+  const [finalScore, setFinalScore] = useState(0);
   
   const pirates = [
     {
@@ -47,7 +51,21 @@ const InvitationRevealSection = () => {
   ];
 
   const handlePirateClicked = (pirateId: number) => {
-    setRemovedCards(prev => new Set(Array.from(prev).concat(pirateId)));
+    const newSet = new Set(Array.from(removedCards).concat(pirateId));
+    setRemovedCards(newSet);
+    
+    // Show quiz when all pirates are removed
+    if (newSet.size === pirates.length) {
+      setTimeout(() => {
+        setShowQuiz(true);
+      }, animationsEnabled ? 800 : 0);
+    }
+  };
+
+  const handleQuizComplete = (score: number) => {
+    setFinalScore(score);
+    setQuizCompleted(true);
+    setShowQuiz(false);
   };
 
   const allCardsRemoved = removedCards.size === pirates.length;
@@ -64,7 +82,7 @@ const InvitationRevealSection = () => {
       <motion.div 
         className="absolute top-8 left-0 right-0 z-20 flex justify-center"
         initial={animationsEnabled ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
-        animate={allCardsRemoved ? { 
+        animate={allCardsRemoved || showQuiz ? { 
           opacity: 0, 
           y: -20,
           transition: { duration: 0.5, ease: "easeOut" }
@@ -82,11 +100,22 @@ const InvitationRevealSection = () => {
       </motion.div>
 
       <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
+        {/* Quiz Game */}
+        {showQuiz && !quizCompleted && (
+          <div className="relative z-30 w-full flex items-center justify-center">
+            <QuizGame 
+              onComplete={handleQuizComplete}
+              animationsEnabled={animationsEnabled}
+            />
+          </div>
+        )}
+
         {/* Envelope Animation */}
         <div className="relative z-0 w-full flex items-center justify-center pointer-events-none">
           <EnvelopeAnimation 
-            isVisible={allCardsRemoved} 
+            isVisible={quizCompleted} 
             animationsEnabled={animationsEnabled}
+            score={finalScore}
           />
         </div>
 
