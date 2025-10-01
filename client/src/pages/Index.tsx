@@ -15,7 +15,6 @@ import ScrollTriggeredTimeline from '@/components/ScrollTriggeredTimeline';
 import VenueSection from '@/components/VenueSection';
 import DressCodeSection from '@/components/DressCodeSection';
 import EntourageSection from '@/components/EntourageSection';
-import GiftSection from '@/components/GiftSection';
 import RSVPSection from '@/components/RSVPSection';
 import MemorableMomentsSection from '@/components/MemorableMomentsSection';
 import FAQSection from '@/components/FAQSection';
@@ -62,8 +61,6 @@ const Index = () => {
       };
     }
   }, []);
-
-  
 
   return (
     <AnimationContext.Provider value={{ animationsEnabled }}>
@@ -113,7 +110,6 @@ const Index = () => {
           <MemorableMomentsSection />
           <RSVPSection />
           <EntourageSection />
-          <GiftSection />
           <CoverSection
             imageUrl={cover3Image}
             alt="Andrei & Sam Wedding Cover Image 3"
